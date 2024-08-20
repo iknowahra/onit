@@ -1,0 +1,15 @@
+{
+  "short_name": "ON!T",
+  "name": "ON!T 스터디카페",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "595x416",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
