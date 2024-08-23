@@ -34,14 +34,14 @@ function App() {
   }, []);
 
   return (
-    <BranchProvider>
-      <Router>
+    <Router>
+      <BranchProvider>
         <ScrollToTop />
         <Wrapper>
           <Main />
         </Wrapper>
-      </Router>
-    </BranchProvider>
+      </BranchProvider>
+    </Router>
   );
 
 }

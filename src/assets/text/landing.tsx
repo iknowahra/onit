@@ -1,3 +1,5 @@
+import information from "./information";
+
 interface iSlogan {
   sub: string;
   main: string;
@@ -8,6 +10,7 @@ interface iSlogan {
 interface iBranch {
   label: string;
   value: number;
+  path: string;
 }
 
 interface iIntroDetail {
@@ -45,17 +48,19 @@ const Landing: iLanding = {
       "온잇 공유오피스는 다년간의 투자 경험과 노하우를 지닌 세무 실무사가 함께 합니다.\n법인 설립, 사업자등록, 임대차 계약, 실사 대응, 우편물 관리 등 모든 방면에서 서포트가 가능합니다.",
   },
   branches: [
-    { label: "지점을 선택하세요", value: -1 },
+    { label: "지점을 선택하세요", value: -1, path: "" },
     {
+      path: "onedang",
       label: "인천 원당 1호점",
       value: 0,
     },
     {
+      path: "pyeongtaek",
       label: "경기 평택 2호점",
       value: 1,
 
     },
-    { label: "서울 영등포구청 3호점", value: 2 },
+    { path: "yeongdeungpo", label: "서울 영등포구청 3호점", value: 2 },
   ],
   intro: [{
     title: "인천 원당점(비과밀억제권역)",

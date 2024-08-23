@@ -41,7 +41,7 @@ function Information() {
   }, [branch]);
 
   return (
-    <Wrapper id="menu7">
+    <Wrapper id="menu6">
       <Inner>
         <Subject main="찾아오시는 길" sub={info?.name} />
         <Branch info={info} />

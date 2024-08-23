@@ -1,4 +1,7 @@
-import { createContext, ReactNode, useContext, useMemo, useState, Dispatch, SetStateAction } from 'react';
+import { createContext, ReactNode, useContext, useMemo, useState, Dispatch, SetStateAction, useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import Landing from '../assets/text/landing';
+import { nextTick } from 'process';
 
 // 타입 정의
 type BranchContextType = [number, Dispatch<SetStateAction<number>>];
@@ -11,10 +14,22 @@ interface BranchProviderProps {
 }
 
 function BranchProvider({ children }: BranchProviderProps) {
+    const location = useLocation().pathname.replace("/branch/", "");
+    const [branch, setBranch] = useState<number>(() => {
+        let branchInfo = Landing.branches.findIndex(({ path }) => path === location);
+        return branchInfo < 0 ? branchInfo : branchInfo - 1;
+    });
 
-    const [branch, setBranch] = useState<number>(-1);
+    useEffect(() => {
+        let branchInfo = Landing.branches.findIndex(({ path }) => path === location);
+        branchInfo = branchInfo < 0 ? branchInfo : branchInfo - 1;
 
-    // useMemo 결과의 타입을 명시적으로 지정
+        // branch가 실제로 변경될 필요가 있을 때만 상태를 업데이트합니다.
+        if (branch !== branchInfo) {
+            setBranch(branchInfo);
+        }
+    }, [location]);
+
     const value = useMemo<BranchContextType>(() => [branch, setBranch], [branch, setBranch]);
 
     return (
