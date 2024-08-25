@@ -23,7 +23,7 @@ const Container = styled.div<ContainerProps>`
       ? `background-color: white;
          box-shadow: 0 1px 2px ${theme.color.lightGrey}`
       : 'background-color: rgba(255,255,255,0.7)'};
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     height: 4rem;
     background-color: ${({ theme }) => theme.color.lightGrey};
   }
@@ -44,7 +44,7 @@ const Wrapper = styled.div`
     object-fit: contain;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 100%;
     position: relative;
     padding-top: 1rem;
@@ -60,7 +60,7 @@ const Categories = styled.div<ModalProps>`
   justify-content: flex-end;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     z-index: 10;
     position: fixed;
     background-color: white;
@@ -81,7 +81,7 @@ const Menu = styled.a`
   margin: 0 0.4rem;
   font-size: 0.8rem;
   color: ${({ theme }) => theme.color.charcoal};
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
@@ -90,7 +90,7 @@ const Menu = styled.a`
 const Trigger = styled.button`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     z-index: 11;
     display: inline;
     position: absolute;
@@ -102,7 +102,7 @@ const Trigger = styled.button`
   }
 `;
 const Drop = styled(Dropdown)`
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display: inline;
   }
 `;
@@ -120,7 +120,7 @@ const DropMenu = styled(Dropdown.Menu)`
 const ModalHelper = styled.div<ModalProps>`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display: ${({ isOpenModal }) => (isOpenModal ? "block" : "none")};
     z-index: 5;
     position: fixed;
@@ -145,7 +145,6 @@ function Header() {
 
   const handleScroll = (id: number | string) => {
     const target = document.getElementById("home" + id); // 대상 요소 찾기
-    console.log(target)
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
@@ -157,7 +156,6 @@ function Header() {
       window.scrollY === 0 ? setScroll(false) : setScroll(true);
     }
 
-    console.log(window.scrollY)
     window.addEventListener('scroll', effectFn);
     return () => {
       window.removeEventListener('scroll', effectFn);

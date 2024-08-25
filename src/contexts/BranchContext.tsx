@@ -1,7 +1,6 @@
 import { createContext, ReactNode, useContext, useMemo, useState, Dispatch, SetStateAction, useEffect } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Landing from '../assets/text/landing';
-import { nextTick } from 'process';
 
 // 타입 정의
 type BranchContextType = [number, Dispatch<SetStateAction<number>>];

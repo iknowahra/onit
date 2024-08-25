@@ -33,18 +33,18 @@ const Wrapper = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
-@media (max-width: 768px) {
+@media (max-width: 780px) {
   display:none;
 }
 `
 const Mobile = styled.div`
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     /* display:none; */
   }
 `;
 const CardStyle = styled(Card)`
  width: 30%;
- @media (max-width: 768px) {
+ @media (max-width: 780px) {
     width: 100%;
     display: flex !important;
   }
@@ -52,7 +52,7 @@ const CardStyle = styled(Card)`
 
 const SliderWrapper = styled.div`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display:block;
     width: 100%;
   }
@@ -75,7 +75,7 @@ const SliderSlap = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 100%;
 
     p {

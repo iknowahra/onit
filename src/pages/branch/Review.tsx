@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   height: 75 vh;
   background-color: ${({ theme }) => theme.color.lightGrey};
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     height: auto;
 
     h3 {
@@ -40,7 +40,7 @@ const Inner = styled.div`
     margin: -1rem 0 1rem 0;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 90%;
 
     > h3 {
@@ -58,7 +58,7 @@ const SliderWrapper = styled.div`
   width: 90%;
   margin: auto;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 95%;
   }
 `;
@@ -69,6 +69,7 @@ const SliderSlap = styled.div`
   div {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     img {
       border-radius: 10px;
       width: 200px;
@@ -94,7 +95,7 @@ const SliderSlap = styled.div`
     display: flex;
     margin-bottom: 1rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 100%;
 
     p {
@@ -117,7 +118,7 @@ const Tag = styled.span`
   border-radius: 5px;
   border: ${({ theme }) => theme.boxBorder};
   margin: 0 0.2rem;
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     font-size: 1rem !important;
   }
 `;

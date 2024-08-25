@@ -1,21 +1,32 @@
-import styled from "styled-components";
-import Slider from "react-slick";
-import BranchDrop from "../../components/BranchDrop";
+import styled from 'styled-components';
+import Slider from 'react-slick';
+import BranchDrop from '../../components/BranchDrop';
 
-import photo1 from "../../assets/slide-welcome-01.jpg";
-import photo2 from "../../assets/slide-welcome-02.jpg";
-import photo3 from "../../assets/slide-welcome-03.jpg";
-import office from "../../assets/valueup.jpg";
+import photo1 from '../../assets/slide-welcome-01.jpg';
+import photo2 from '../../assets/slide-welcome-02.jpg';
+import photo3 from '../../assets/slide-welcome-03.jpg';
+import office from '../../assets/valueup.jpg';
 
-import Eng from "../../assets/text/landing";
-import Fit from "../../assets/text/benefit";
-
+import Eng from '../../assets/text/landing';
+import Fit from '../../assets/text/benefit';
 
 const SliderWrapper = styled.div`
   height: calc(100vh - 20vh) !important;
   overflow-y: hidden !important;
+  img {
+    height: 100vh !important;
+    object-fit: cover;
+  }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1080px) {
+    height: 80vh !important;
+    img {
+      height: 100vh !important;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 780px) {
     display: none;
   }
 `;
@@ -28,7 +39,7 @@ const Intro = styled.div`
   transform: translateY(-50%);
   width: 50%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     position: relative;
     width: 100%;
     left: 0;
@@ -39,7 +50,7 @@ const Intro = styled.div`
 `;
 const MobileImg = styled.div`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display: block;
     width: 100%;
     height: 20vh;
@@ -80,7 +91,7 @@ const TypeSlogan = styled.h1`
 
 const Details = styled.p`
   font-size: 1rem;
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 85%;
     margin: auto;
     white-space: normal;
@@ -115,7 +126,7 @@ const WhyBanner = styled.a`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     bottom: 1.5rem;
   }
 `;
@@ -134,12 +145,12 @@ function Welcome() {
 
   const handleScroll = (id: string) => {
     const target = document.getElementById(id); // 대상 요소 찾기
-    const scrollContainer = document.getElementById("homeScroll"); // 스크롤 가능한 요소
+    const scrollContainer = document.getElementById('homeScroll'); // 스크롤 가능한 요소
     if (target && scrollContainer) {
       const targetPosition = target.offsetTop;
       scrollContainer.scrollTo({
         top: targetPosition,
-        behavior: "smooth", // 부드러운 스크롤
+        behavior: 'smooth', // 부드러운 스크롤
       });
     }
   };
@@ -167,7 +178,7 @@ function Welcome() {
         <Details>{Eng.slogan.details}</Details>
         <BranchDrop />
       </Intro>
-      <WhyBanner onClick={() => handleScroll("home1")}>
+      <WhyBanner onClick={() => handleScroll('home1')}>
         {Fit.why.title}
         <i className="fa fa-angle-double-down" aria-hidden="true"></i>
         <i className="fa fa-angle-double-down" aria-hidden="true"></i>

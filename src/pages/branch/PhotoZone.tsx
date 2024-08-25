@@ -43,7 +43,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: auto;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     height: auto;
     padding-top: 2rem;
   }
@@ -59,7 +59,7 @@ const Inner = styled.div`
   flex-wrap: wrap;
   border-top: ${({ theme }) => theme.boxBorder};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     flex-direction: column;
     width: 80%;
     height: auto;
@@ -97,7 +97,7 @@ const Inner = styled.div`
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1300px) {
         border : 1px solid red;
         display: none;
     }
@@ -119,10 +119,10 @@ const Inner = styled.div`
 
 const SliderWrapper = styled.div`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     display: block;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     
     .sliderImg{
       width: 100%;
@@ -181,12 +181,12 @@ function Guide() {
   };
 
   const settings = {
-    arrows: false,
-    dots: false,
-    infinite: true,
-    fade: true,
-    autoplay: true,
-    autoplaySpeed: 4000,
+    arrows: true,
+    // dots: true,
+    // infinite: true,
+    // fade: true,
+    // autoplay: true,
+    // autoplaySpeed: 4000,
   };
   return (
     <Wrapper id="menu4">
@@ -205,9 +205,12 @@ function Guide() {
           </div>
         ))}
         <SliderWrapper>
-          <Slider speed={1000} {...settings}>
+          <Slider dots {...settings}>
             {photos[branch]?.map((photo, index) => (
-              <div className="sliderImg" key={index}>
+              <div className="sliderImg" key={index} onClick={() => {
+                handleModal(true);
+                setCurrent(index);
+              }}>
                 <img src={photo} alt="" />
               </div>
             ))}

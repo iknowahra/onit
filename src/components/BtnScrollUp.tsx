@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import information from '../assets/text/information';
 import { useBranch } from '../contexts/BranchContext';
 import priceInfo from '../assets/text/price';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Wrapper = styled.a`
   z-index: 10;
@@ -15,7 +15,7 @@ const Wrapper = styled.a`
   justify-content: end;
   align-items: end;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     bottom: 1.5rem;
   }
 
@@ -72,7 +72,7 @@ const Button = styled.span`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 2.5rem;
     height: 2.5rem;
   }
@@ -81,7 +81,7 @@ const Button = styled.span`
 function BtnScrollUp() {
   const [isScroll, setScroll] = useState(true);
   const [branch, setBranch] = useBranch();
-  const router = useHistory();
+  const router = useNavigate();
 
   const handleScroll = (id: number | string) => {
     const target = document.getElementById('' + id); // 대상 요소 찾기
@@ -120,7 +120,7 @@ function BtnScrollUp() {
       <Button
         className="hoverBtn"
         onClick={() => {
-          branch < 0 ? handleScroll('home2') : handleScroll('menu7');
+          branch < 0 ? handleScroll('home2') : handleScroll('menu6');
         }}
       >
         <i className="fa fa-map-marker" aria-hidden="true" />
@@ -136,7 +136,7 @@ function BtnScrollUp() {
         className="hoverBtn"
         onClick={() => {
           setBranch(-1);
-          router.push('/');
+          router('/');
         }}
       >
         <i className="fa fa-home" aria-hidden="true" />

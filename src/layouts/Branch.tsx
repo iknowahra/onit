@@ -15,7 +15,7 @@ import Footer from '../components/Footer';
 
 import { useBranch } from '../contexts/BranchContext';
 import information from '../assets/text/information';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100%;
@@ -23,7 +23,7 @@ const Container = styled.div`
   margin: auto;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     overflow-x: hidden;
   }
 `;
@@ -31,7 +31,7 @@ const Container = styled.div`
 const Inner = styled.div`
   position: relative;
   overflow-y: auto;
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display: flex;
     flex-direction: column;
   }
@@ -41,7 +41,7 @@ function Branch() {
   const POPUP_CLOSE_EXPIRE_TIME = 24 * 60 * 60 * 1000;
 
   const [isOpen, setOpen] = useState(true);
-  const router = useHistory();
+  const router = useNavigate();
   const [branch, _] = useBranch();
 
   const handleModal = (open: boolean, desireClose: boolean) => {
@@ -62,7 +62,7 @@ function Branch() {
   }
 
   useEffect(() => {
-    if (branch < 0) router.push("/")
+    if (branch < 0) router("/")
     if (branch >= 0 && information[branch].event) setOpen(checkPopupOpen);
 
   }, [branch])

@@ -1,6 +1,6 @@
 import React, { useEffect, createContext } from 'react';
 import styled from 'styled-components';
-import { HashRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   width: 100%;
   margin: auto;
   position: relative;
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     overflow-x: hidden;
   }
 `;

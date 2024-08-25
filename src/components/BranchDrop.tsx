@@ -6,7 +6,7 @@ import { useBranch } from "../contexts/BranchContext";
 import landingInfo from "../assets/text/landing";
 
 const Drop = styled(Dropdown)`
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     /* display: none; */
   }
 `;

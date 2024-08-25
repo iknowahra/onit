@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   padding: 0;
   padding-bottom: 20vh;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     padding: 1rem 0 6rem 0;
   }
 `;
@@ -23,7 +23,7 @@ const Inner = styled.div`
   margin: auto;
   padding-bottom: 4rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 90%;
     padding: 0;
   }

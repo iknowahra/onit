@@ -55,7 +55,7 @@ const Wrapper = styled.div`
   padding-bottom: 2rem;
   background-color: ${({ theme }) => theme.color.lightGrey};
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     padding: 0rem;
     width: 100%;
     height: auto;
@@ -86,16 +86,18 @@ const Inner = styled.div`
 const TabsWrapper = styled(Tabs)`
   width: 100%;
   margin-bottom: 2rem;
-  @media (max-width: 768px) {
+  @media (max-width: 720px) {
     margin-bottom: 0rem;
   }
 `;
+
 const TabWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
   width: 100%;
-  @media (max-width: 768px) {
+  
+  @media (max-width: 720px) {
     flex-direction: column;
   }
 `;
@@ -120,9 +122,17 @@ const RightInner = styled.div`
     font-weight: bolder !important;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
+   width: 31%;
+  }
+
+  @media (max-width: 890px) {
+   width: 47%;
+  }
+
+  @media (max-width: 720px) {
     width: 100%;
-    height: 25rem !important;
+    height: 30rem !important;
 
     &:nth-child(1),
     :nth-child(3) {
@@ -140,7 +150,7 @@ const Detail = styled.span`
   display: block;
   margin: 0 0 0 1rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 720px) {
     font-size: 0.9rem;
   }
 `;
@@ -163,7 +173,7 @@ const RightImage = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 720px) {
     height: 65%;
   }
 `;
@@ -179,7 +189,7 @@ const Badge = styled.span<BadgeProps>`
   background-color: ${({ content, theme }) =>
     content.toLowerCase() !== 'best' ? theme.color.charcoal : theme.color.main};
 
-  @media (max-width: 768px) {
+  @media (max-width: 720px) {
     font-size: 0.9rem;
     padding: 0.1rem 0.7rem;
   }
@@ -196,7 +206,7 @@ const Reserve = styled.button`
   padding-right: 1.5rem;
   border-radius: 0.2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 720px) {
     height: 2.3rem;
     justify-content: center;
     font-size: 1rem;

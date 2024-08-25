@@ -56,7 +56,7 @@ const Inner = styled.div`
     height: 450px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 100%;
 
     iframe {
@@ -78,6 +78,10 @@ const ImgWrapper = styled.div`
   overflow: hidden;
   border-radius: 0.5rem;
 
+@media (max-width: 1300px) {
+  width: 80%;
+}
+
   >img {
     width: 100%;
   }
@@ -88,7 +92,7 @@ function Modal({ title, handleModal, img }: Props) {
     <>
       <Wrapper />
       <Container onClick={() => { handleModal(false) }}>
-        <i className="xi-close" onClick={() => { console.log("ddd"); handleModal(false) }} />
+        <i className="xi-close" onClick={() => { handleModal(false) }} />
         <Inner>
           <Title>{title}</Title>
           <ImgWrapper>

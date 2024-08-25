@@ -60,7 +60,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* mobile*/
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
    html{
      font-size: 14px;
     } 

@@ -1,12 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import OnitLogo from "../assets/logo.png";
-import landingInfo from "../assets/text/landing";
+import OnitLogo from '../assets/logo.png';
+import landingInfo from '../assets/text/landing';
 
-import { useBranch } from "../contexts/BranchContext";
-import about from "../assets/text/information";
-import NaverLogo from "./NaverLogo";
+import { useBranch } from '../contexts/BranchContext';
+import about from '../assets/text/information';
+import NaverLogo from './NaverLogo';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -18,7 +17,7 @@ const Wrapper = styled.div`
   align-items: center;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     height: 8vh;
   }
 `;
@@ -33,16 +32,17 @@ const Inner = styled.div`
     font-size: 0.8rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1080px) {
     width: 90%;
     height: 90%;
     margin: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     div,
     span {
-      font-size: 1rem;
+      font-size: 0.8rem !important;
     }
   }
 `;
@@ -52,7 +52,7 @@ const Contents = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     flex-direction: row;
     align-items: center;
   }
@@ -63,7 +63,12 @@ const Logo = styled.div`
   img {
     width: 100%;
   }
-
+  @media (max-width: 780px) {
+    img {
+      width: auto;
+      height: 4rem;
+    }
+  }
   @media (max-width: 344px) {
     /* 갤럭시 폴드 */
     display: none;
@@ -73,7 +78,7 @@ const Copyright = styled.div`
   width: 90%;
   margin: 0 2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     margin: 0;
   }
 `;
@@ -85,10 +90,10 @@ const PolicySns = styled.div`
   padding-bottom: 0.8rem;
   border-bottom: 1px solid ${({ theme }) => theme.color.sub};
 
-  @media (max-width: 768px) {
-    align-items:center;
+  @media (max-width: 780px) {
+    align-items: center;
     justify-content: start;
-    border-bottom : none;
+    border-bottom: none;
   }
 `;
 
@@ -96,11 +101,16 @@ const Policy = styled.div`
   span {
     display: block;
   }
+  @media (max-width: 780px) {
+    span{
+      font-size: 1.1rem !important;
+    }
+  }
 `;
 
 // NaverLogo 컴포넌트를 스타일링합니다.
 const StyledNaverLogo = styled.span`
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display: none;
   }
 `;
@@ -111,7 +121,7 @@ const Address = styled.div`
   span {
     display: flex;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display: none;
   }
 `;
@@ -124,11 +134,11 @@ const Branch = styled.div`
   a:not(:last-child) {
     margin-right: 5px;
     &::after {
-      content: "|";
+      content: '|';
       margin-left: 5px;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     a {
       font-size: 0.8rem !important;
       margin: 0 !important;
@@ -140,14 +150,14 @@ const BranchInfo = styled.span`
   a:not(:last-child) {
     margin-right: 5px;
     &::after {
-      content: "|";
+      content: '|';
       margin: 0 5px !important;
     }
   }
-  @media (max-width: 768px) {
-    font-size: 0.7rem !important;
+  @media (max-width: 1080px) {
+    /* display: none; */
     a {
-      font-size: 0.8rem !important;
+      display: none;
     }
   }
 `;
@@ -158,7 +168,7 @@ const DisplayFlex = styled.div`
   align-items: center;
   height: 1.2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     flex-direction: column;
     align-items: start;
     justify-content: center;
@@ -166,7 +176,7 @@ const DisplayFlex = styled.div`
 `;
 const BranchLabel = styled.a`
   font-weight: bolder !important;
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display: none;
   }
 `;
@@ -206,15 +216,13 @@ function Footer() {
                     address &&
                     branch == branch && (
                       <DisplayFlex key={branch}>
-                        <BranchLabel onClick={() => setBranch(branch)}>
-                          {name}
-                        </BranchLabel>
+                        <BranchLabel onClick={() => setBranch(branch)}>{name}</BranchLabel>
                         <a href={map} target="_blank">
                           {address}
                         </a>
                         <BranchInfo>
-                          <a href={"tel:" + phone.replace(/\D/g, '')}>Tel : {phone}</a>
-                          <a href={"tel:" + tel.replace(/\D/g, '')}>{tel}</a>
+                          <a href={'tel:' + phone.replace(/\D/g, '')}>Tel : {phone}</a>
+                          <a href={'tel:' + tel.replace(/\D/g, '')}>{tel}</a>
                         </BranchInfo>
                       </DisplayFlex>
                     )

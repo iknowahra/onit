@@ -22,14 +22,14 @@ const ImgWrapper = styled.div`
   width: 100%;
 }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     > img {
       width: 100%;
     }
   }
 `;
 const CheckStyle = styled(Form.Check)`
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     font-size: 1rem;
     line-height: 1.7rem;
   }

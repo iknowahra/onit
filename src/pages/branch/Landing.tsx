@@ -11,7 +11,7 @@ import info, { iIntroDetail } from "../../assets/text/landing";
 const Wrapper = styled.div`
   height: 100vh;
   background-color: ${({ theme }) => theme.color.sub};
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     height: 70vh;
   }
 `;
@@ -19,7 +19,7 @@ const ImageWrapper = styled.div`
   width: 100%;
   height: 65%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     height: 75%;
   }
 
@@ -37,10 +37,11 @@ const Inner = styled.div`
   margin: auto;
   display: flex;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     flex-direction: column;
+    justify-content: center;
     width: 90%;
-    height: 30%;
+    height: 25%;
   }
 `;
 
@@ -50,7 +51,7 @@ const Contents = styled.div`
   align-items: center;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     flex-direction: row;
     align-items: center;
     margin: auto;
@@ -68,7 +69,7 @@ const Desc = styled.div`
   width: 90%;
   margin: 0 2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -76,12 +77,13 @@ const Desc = styled.div`
     padding-left: 1rem;
     margin: 0;
   }
+
   > h1 {
     color: ${({ theme }) => theme.color.grey};
     font-weight: bolder;
 
-    @media (max-width: 768px) {
-      font-size: 1.3rem !important;
+    @media (max-width: 780px) {
+      font-size: 1.2rem !important;
       color: #ffffff;
       line-height: 1rem;
     }
@@ -89,8 +91,8 @@ const Desc = styled.div`
 
   > p {
     color: ${({ theme }) => theme.color.grey};
-    font-size: 1.2rem;
-    @media (max-width: 768px) {
+    font-size: 1.1rem;
+    @media (max-width: 780px) {
       display: none;
     }
   }
@@ -102,7 +104,7 @@ const Desc = styled.div`
       margin-left: 3px;
       border-bottom: 1px solid ${({ theme }) => theme.color.lightGrey};
     }
-    @media (max-width: 768px) {
+    @media (max-width: 780px) {
       font-size: 1rem;
     }
   }
@@ -123,7 +125,7 @@ const ScrollDown = styled.a`
   cursor: pointer;
   z-index: 999;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display: none;
   }
 
@@ -137,7 +139,7 @@ const ScrollDown = styled.a`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     bottom: 1.5rem;
   }
 `;
@@ -181,7 +183,7 @@ function Landing() {
             </p>
             <div>
               <i className="fa fa-volume-control-phone" aria-hidden="true"></i>
-              상담문의전화 :<a href={`tel:${currBranch?.tel.replace(/\D/g, '')}`}>032)715-7555</a>
+              상담문의전화 :<a href={`tel:${currBranch?.tel.replace(/\D/g, '')}`}>{currBranch?.tel}</a>
             </div>
           </Desc>
           <ScrollDown onClick={() => handleScroll(1)}>

@@ -17,7 +17,7 @@ const ImgWrapper = styled.div`
   cursor: pointer;
   border: ${({ theme }) => theme.boxBorder};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1080px) {
     height: 50%;
   }
 
@@ -30,6 +30,9 @@ const ImgWrapper = styled.div`
 
 const Contents = styled.div`
   width: 100%;
+  div,span,a,p,article{
+    font-size: 0.9rem !important;
+  }
 
   > div:not(:last-child) {
     display: flex;
@@ -45,14 +48,14 @@ const Contents = styled.div`
     font-size: 0.9rem !important;
     font-weight: bold !important;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1080px) {
       width: 5.5rem;
     }
 
     > i {
       color: #b8b8b8;
       margin-right: 1rem;
-      @media (max-width: 768px) {
+      @media (max-width: 1080px) {
         margin-right: 0.5rem;
       }
     }
@@ -62,7 +65,7 @@ const Contents = styled.div`
     font-size: 0.9rem !important;
     color: ${({ theme }) => theme.color.sub};
 
-    @media (max-width: 768px) {
+    @media (max-width: 1080px) {
       width: calc(100% - 7rem);
     }
   }
@@ -73,7 +76,7 @@ const Contents = styled.div`
   }
 
   .phone > .content {
-     @media (max-width: 768px) {
+    @media (max-width: 1080px) {
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -93,13 +96,13 @@ const Contents = styled.div`
         flex-direction: column;
         justify-content: end;
         align-items: center;
-        @media (max-width: 768px) {
+        @media (max-width: 1080px) {
           margin-right: 1rem;
         }
         > span {
           font-size: 3.5rem !important;
 
-          @media (max-width: 768px) {
+          @media (max-width: 1080px) {
             font-size: 1.5rem !important;
           }
         }
@@ -111,7 +114,7 @@ const Contents = styled.div`
       i {
         font-size: 3rem;
         font-weight: lighter;
-        @media (max-width: 768px) {
+        @media (max-width: 1080px) {
           font-size: 1.5rem;
         }
       }
@@ -125,13 +128,14 @@ const Contents = styled.div`
     width: 100%;
     display: flex;
     align-items: start;
-    @media (max-width: 768px) {
+    @media (max-width: 1080px) {
       flex-direction: column;
       .business {
         border-bottom: ${({ theme }) => theme.boxBorder};
       }
     }
   }
+
   .business,
   .account {
     display: flex;
@@ -140,7 +144,7 @@ const Contents = styled.div`
     width: 50%;
     margin-top: 0;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1080px) {
       width: 100%;
       justify-content: space-between;
     }
@@ -148,7 +152,7 @@ const Contents = styled.div`
     .header {
       height: 100%;
       margin: auto;
-      @media (max-width: 768px) {
+      @media (max-width: 1080px) {
         width: 5.5rem !important;
         margin: auto 0;
       }
@@ -159,7 +163,7 @@ const Contents = styled.div`
       flex-direction: column;
       padding-top: 1rem;
 
-      @media (max-width: 768px) {
+      @media (max-width: 1080px) {
         width: calc(100% - 7rem);
       }
 
@@ -171,10 +175,14 @@ const Contents = styled.div`
         }
         .right {
           width: calc(100% - 5rem);
-          @media (max-width: 768px) {
-          }
         }
       }
+    }
+  }
+
+  .further {
+    @media (max-width: 1080px) {
+      display: none;
     }
   }
 `;
@@ -209,7 +217,7 @@ const icons = {
 };
 
 function Information({ info }: Props) {
-  const photos = [photo1, photo2, photo3]
+  const photos = [photo1, photo2, photo3];
   const [currPhoto, setPhoto] = useState(photos[0]);
   const [branch, _] = useBranch();
 
@@ -218,18 +226,17 @@ function Information({ info }: Props) {
   };
 
   const zoomInTooMuch = (e: ReactZoomPanPinchRef, url: string | undefined) => {
-    console.log(e?.state);
     if (e?.state?.scale > 2 && e?.state?.scale > e.state.previousScale) {
-      if (window.confirm("네이버 지도로 확인하시겠습니까?")) {
-        handleOpenNewTab(url)
+      if (window.confirm('네이버 지도로 확인하시겠습니까?')) {
+        handleOpenNewTab(url);
       }
-    };
-  }
+    }
+  };
 
   useEffect(() => {
-    const idx = information.findIndex(branch => branch.path == info?.path);
-    idx >= 0 ? setPhoto(photos[idx]) : setPhoto(photos[0])
-  }, [info?.path])
+    const idx = information.findIndex((branch) => branch.path == info?.path);
+    idx >= 0 ? setPhoto(photos[idx]) : setPhoto(photos[0]);
+  }, [info?.path]);
 
   return (
     <>
@@ -323,7 +330,7 @@ function Information({ info }: Props) {
               </span>
               <span>
                 <span className="left"></span>
-                <span className="right">※입금하실 때 정보를 잘 입력해주세요</span>
+                <span className="right further">※입금하실 때 정보를 잘 입력해주세요</span>
               </span>
             </span>
           </div>

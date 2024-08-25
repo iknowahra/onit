@@ -12,7 +12,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
 
     span,
     p {
@@ -34,7 +34,7 @@ const Inner = styled.div`
     margin-bottom: 0.8rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     padding-top: 6rem;
   }
 `;
@@ -49,7 +49,7 @@ const BottomCard = styled.div`
   border-radius: 10px;
   background-color: ${({ theme }) => theme.color.lightGrey};
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display: flex;
     flex-direction: column-reverse;
     height: 80% !important;
@@ -60,7 +60,7 @@ const BottomCard = styled.div`
     padding-left: 1.5rem;
     font-size: 2rem;
     line-height: normal;
-    @media (max-width: 768px) {
+    @media (max-width: 780px) {
       margin-top: 2rem;
     }
     > div {
@@ -71,7 +71,7 @@ const BottomCard = styled.div`
       font-size: 1.8rem;
       font-weight: bolder;
       margin-right: 0.5rem;
-      @media (max-width: 768px) {
+      @media (max-width: 780px) {
         font-size: 1rem !important;
       }
     }
@@ -89,7 +89,7 @@ const BottomCard = styled.div`
       height: 100%;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 780px) {
       width: 100%;
       height: auto;
       border-radius: 4px;

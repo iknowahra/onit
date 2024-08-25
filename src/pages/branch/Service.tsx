@@ -35,7 +35,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     height: auto;
   }
 `;
@@ -54,7 +54,7 @@ const Title = styled.div`
   p {
     font-size: 1rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     margin-bottom: 1rem;
     div {
       font-size: 1.7rem;
@@ -72,7 +72,7 @@ const Inner = styled.div`
   height: 80%;
   background-color: ${({ theme }) => theme.color.lightGrey};
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     flex-direction: column;
   }
 `;
@@ -88,7 +88,7 @@ const Contents = styled.div<ContentsProps>`
     object-fit: fit;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     flex-direction: column-reverse;
     width: 100%;
   }
@@ -121,7 +121,7 @@ const HeaderWrapper = styled.div`
     font-size: 1rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 80%;
     height: 100%;
     padding: 3.5rem 0;

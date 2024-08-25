@@ -12,7 +12,7 @@ const Container = styled.div`
   margin: auto;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     overflow-x: hidden;
   }
 `;
@@ -21,7 +21,7 @@ const Inner = styled.div`
   position: relative;
   height: calc(100vh - 20vh);
   overflow-y: auto;
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 100%;
     height: 100%;
     display: flex;

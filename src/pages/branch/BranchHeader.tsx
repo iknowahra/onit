@@ -23,7 +23,7 @@ const Container = styled.div<ContainerProps>`
       ? `background-color: white;
          box-shadow: 0 1px 2px ${theme.color.lightGrey}`
       : 'background-color: rgba(255,255,255,0.7)'};
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     height: 4rem;
     background-color: ${({ theme }) => theme.color.lightGrey};
 
@@ -45,7 +45,7 @@ const Wrapper = styled.div`
     object-fit: contain;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     width: 100%;
     position: relative;
     padding-top: 1rem;
@@ -61,7 +61,7 @@ const Categories = styled.div<ModalProps>`
   justify-content: flex-end;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     z-index: 10;
     position: fixed;
     background-color: white;
@@ -83,7 +83,7 @@ const Menu = styled.a<ContainerProps>`
   font-size: 0.8rem;
   color:${({ theme }) => theme.color.charcoal};
       
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
@@ -92,7 +92,7 @@ const Menu = styled.a<ContainerProps>`
 const Trigger = styled.button`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     z-index: 11;
     display: inline;
     position: absolute;
@@ -104,7 +104,7 @@ const Trigger = styled.button`
   }
 `;
 const Drop = styled(Dropdown)`
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     display: inline;
   }
 `;
@@ -122,7 +122,7 @@ const DropMenu = styled(Dropdown.Menu)`
 const ModalHelper = styled.div<ModalProps>`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     display: ${({ isOpenModal }) => (isOpenModal ? "block" : "none")};
     z-index: 5;
     position: fixed;

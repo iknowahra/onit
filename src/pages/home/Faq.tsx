@@ -19,7 +19,7 @@ const Inner = styled.div`
   margin: auto;
   padding: 2rem 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 100%;
   }
 `;
@@ -27,7 +27,7 @@ const Inner = styled.div`
 const Container = styled.div`
   display: flex;
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     flex-direction: column;
   }
 `;
@@ -44,15 +44,15 @@ const Contents = styled.div`
     width: 55%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     width: 90%;
     margin: auto;
     min-height: 0 !important;
     height: 50% !important;
     :first-child {
       width: 90%;
+      /* height: auto; */
       margin: auto;
-      min-height: 80vh;
     }
   }
 `;
@@ -77,7 +77,7 @@ const Title = styled.div<AcordianProps>`
     float: right;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     font-size: 1.1rem;
   }
 `;
@@ -86,7 +86,7 @@ const Details = styled.p<AcordianProps>`
   margin-top: 1rem;
   display: ${({ no, selected }) => (no === selected ? "show" : "none")};
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     font-size: 1rem;
     line-height: 1.9rem;
   }
@@ -101,7 +101,7 @@ const AwardImage = styled.div`
     height: 100%;
     object-fit: cover;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display: none;
   }
 `;
@@ -111,7 +111,7 @@ const AwardTitle = styled.div`
   font-size: 1.5rem;
   font-weight: bolder;
   color: ${({ theme }) => theme.color.main};
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display: none;
   }
 `;
@@ -121,7 +121,7 @@ const AwardDetails = styled.p`
   margin-bottom: 1.5rem;
   width: 25rem;
   max-width: 100%;
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     display: none;
   }
 `;
@@ -134,7 +134,7 @@ const AwardButton = styled.a`
   text-transform: uppercase;
   background-color: white;
   border-radius: 4px;
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     font-size: 1rem;
     padding: 0.2rem 0.5rem;
   }
@@ -152,7 +152,6 @@ function Fnq() {
 
   const handleScroll = (id: number | string) => {
     const target = document.getElementById("home" + id); // 대상 요소 찾기
-    console.log(target)
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
@@ -163,7 +162,6 @@ function Fnq() {
       <Inner>
         <Subject
           main="서비스 이용이 궁금하신가요?"
-          sub="온잇이 도와드리겠습니다."
         />
         <Container>
           <Contents>

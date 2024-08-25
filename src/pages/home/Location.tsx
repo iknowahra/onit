@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   padding-bottom: 2rem;
   background-color: ${({ theme }) => theme.color.lightGrey};
 
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     padding: 0rem;
     width: 100%;
     height: auto;
@@ -46,7 +46,7 @@ const Inner = styled.div`
 const TabsWrapper = styled(Tabs)`
 width: 100%;
 margin-bottom: 2rem;
-@media (max-width: 768px) {
+@media (max-width: 780px) {
     margin-bottom: 0rem;
   }
 `;
@@ -55,7 +55,7 @@ const TabWrapper = styled.div`
   justify-content: start;
   flex-direction: column;
   width: 100%;
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
   }
 `;
 
