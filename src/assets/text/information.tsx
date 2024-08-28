@@ -92,7 +92,7 @@ const information: iBranchInfo[] = [
     account: {
       owner: "주식회사고우",
       bank: "농협은행",
-      accountNo: "301-0334-7708-91"
+      accountNo: "301-0344-3855-71"
     },
     business: {
       name: "주식회사고우",//상호명
@@ -131,6 +131,38 @@ const information: iBranchInfo[] = [
       owner: "김수인", //사업대표자명
       businessNo: "557-81-02901", //사업자번호
       email: "" //대표자이메일
+    }
+  },
+  {
+    path: "wonju",
+    alias: "강원원주점",
+    event: false,
+    name: "강원 원주 4호점",
+    lat: 37.594593, //위도
+    lng: 126.6975021, //경도
+    address:
+      "강원특별자치도 원주시 치악로 1555, 201호",
+    oldAddress: "강원특별자치도 원주시 관설동 1461-1, 201호",
+    map: "https://naver.me/xDJjEaJB",
+    tel: "",
+    phone: "010-4239-8279",
+    time: "00:00 - 24:00(연중무휴)",
+    service: {
+      park: false, // 일반주차여부
+      robotPark: false, //기계식주차여부
+      wifi: true,  //무선와이파이여부
+      genderSeparateToilet: false, //남녀화장실구분여부
+    },
+    account: {
+      owner: "주식회사 고우",
+      bank: "농협은행",
+      accountNo: "301-0355-8102-11"
+    },
+    business: {
+      name: "주식회사고우",//상호명
+      owner: "강윤권", //사업대표자명
+      businessNo: "560-81-03060", //사업자번호
+      email: "onitspace@naver.com" //대표자이메일
     }
   },
 ];

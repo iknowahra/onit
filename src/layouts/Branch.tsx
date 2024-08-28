@@ -16,6 +16,7 @@ import Footer from '../components/Footer';
 import { useBranch } from '../contexts/BranchContext';
 import information from '../assets/text/information';
 import { useNavigate } from 'react-router-dom';
+import reviewInfo, { iReview } from '../assets/text/review';
 
 const Container = styled.div`
   width: 100%;
@@ -41,8 +42,10 @@ function Branch() {
   const POPUP_CLOSE_EXPIRE_TIME = 24 * 60 * 60 * 1000;
 
   const [isOpen, setOpen] = useState(true);
+  const [info, setInfo] = useState<iReview>();
   const router = useNavigate();
   const [branch, _] = useBranch();
+
 
   const handleModal = (open: boolean, desireClose: boolean) => {
     if (desireClose && !open) setStorage();
@@ -52,7 +55,8 @@ function Branch() {
   const checkPopupOpen = () => {
     const now = new Date().getTime();
     const expiredTime = localStorage.getItem("" + branch) || "-1";
-    return parseInt(expiredTime) < now;
+    console.log("ddd", parseInt(expiredTime) < now, information[branch].event)
+    return parseInt(expiredTime) < now && information[branch].event;
   }
 
   const setStorage = () => {
@@ -61,9 +65,14 @@ function Branch() {
 
   }
 
+  useEffect(() => { setOpen(checkPopupOpen()) }, [])
+
   useEffect(() => {
     if (branch < 0) router("/")
-    if (branch >= 0 && information[branch].event) setOpen(checkPopupOpen);
+    if (branch >= 0 && information[branch].event) {
+      setOpen(checkPopupOpen());
+      setInfo(reviewInfo[branch]);
+    }
 
   }, [branch])
 
@@ -72,6 +81,7 @@ function Branch() {
     if (branch >= 0) return (info ? info.name : "") + " 할인 이벤트"
     return "";
   }
+
 
   return (
     <Container id='branch'>
@@ -93,3 +103,4 @@ function Branch() {
 }
 
 export default Branch;
+

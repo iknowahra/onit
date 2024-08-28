@@ -134,7 +134,7 @@ const ModalHelper = styled.div<ModalProps>`
   }
 `;
 
-function Header() {
+function BranchHeader() {
   const menues = [
     { name: "이용가격" },
     { name: "서비스안내" },
@@ -209,4 +209,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default BranchHeader;

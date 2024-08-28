@@ -7,6 +7,7 @@ import { TransformWrapper, TransformComponent, ReactZoomPanPinchRef } from 'reac
 import photo1 from '../assets/1/map.png';
 import photo2 from '../assets/2/map.png';
 import photo3 from '../assets/3/map.png';
+import photo4 from '../assets/4/map.png';
 import { useBranch } from '../contexts/BranchContext';
 
 const ImgWrapper = styled.div`
@@ -217,7 +218,7 @@ const icons = {
 };
 
 function Information({ info }: Props) {
-  const photos = [photo1, photo2, photo3];
+  const photos = [photo1, photo2, photo3, photo4];
   const [currPhoto, setPhoto] = useState(photos[0]);
   const [branch, _] = useBranch();
 
@@ -273,8 +274,8 @@ function Information({ info }: Props) {
             <i className="fa fa-phone" aria-hidden="true"></i>전화번호
           </span>
           <span className="content">
-            <a href={'tel:' + info?.phone.replace(/\D/g, '')}>{info?.phone}</a>
-            <a href={'tel:' + info?.tel.replace(/\D/g, '')}>{info?.tel}</a>
+            {info?.phone && <a href={'tel:' + info?.phone.replace(/\D/g, '')}>{info?.phone}</a>}
+            {info?.tel && <a href={'tel:' + info?.tel.replace(/\D/g, '')}>{info?.tel}</a>}
           </span>
         </div>
         <div className="service">

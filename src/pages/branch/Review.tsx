@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import Slider from "react-slick";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import Slider from 'react-slick';
 
-import Subject from "../../components/Subject";
-import reviewInfo, { iReview } from "../../assets/text/review";
-import { useBranch } from "../../contexts/BranchContext";
+import Subject from '../../components/Subject';
+import reviewInfo, { iReview } from '../../assets/text/review';
+import { useBranch } from '../../contexts/BranchContext';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -104,10 +104,9 @@ const SliderSlap = styled.div`
       white-space: normal;
       text-align: center;
       line-height: 1.5rem;
-
     }
 
-   > span {
+    > span {
       font-size: 0.9rem !important;
     }
   }
@@ -134,17 +133,14 @@ function Review() {
   return (
     <Wrapper id="menu5">
       <Inner>
-        <Subject main={info?.main || ""} sub={info?.sub.toUpperCase()} />
+        <Subject main={info?.main || ''} sub={info?.sub.toUpperCase()} />
         <h3>{info?.subTitle}</h3>
         <SliderWrapper>
           <Slider dots>
             {info?.contents.map((content, index) => (
               <SliderSlap key={index}>
                 <p>{content.details}</p>
-                <div>
-                  {content.tags.length &&
-                    content.tags.map((tag, idx) => <Tag key={idx}>{tag}</Tag>)}
-                </div>
+                <div>{content.tags.length && content.tags.map((tag, idx) => <Tag key={idx}>{tag}</Tag>)}</div>
                 <span>{content.user}</span>
                 <span>{content.source}</span>
               </SliderSlap>

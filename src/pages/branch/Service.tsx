@@ -17,6 +17,10 @@ import photo31 from '../../assets/3/office07.jpg';
 import photo32 from '../../assets/3/printer.jpg';
 import photo33 from '../../assets/3/share.jpg';
 
+import photo41 from '../../assets/4/officeMain01.png';
+import photo42 from '../../assets/4/officeMain02.jpeg';
+import photo43 from '../../assets/4/officeMain03.jpeg';
+
 
 
 interface HeaderProps {
@@ -149,7 +153,7 @@ function Header({ main, sub }: HeaderProps) {
 function Service() {
   const [branch, _] = useBranch();
   const [name, setName] = useState("");
-  const photos: string[][] = [[photo11, photo12, photo13], [photo21, photo22, photo23], [photo31, photo32, photo33]];
+  const photos: string[][] = [[photo11, photo12, photo13], [photo21, photo22, photo23], [photo31, photo32, photo33], [photo41, photo42, photo43]];
 
   useEffect(() => {
     const office = information[branch];

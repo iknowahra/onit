@@ -119,6 +119,12 @@ const review: iReview[] = [{
 
     },
   ],
+},
+{
+  main: '사용자들의 생생 리뷰',
+  sub: '온잇 공유오피스 & 스터디카페',
+  subTitle: '강원 원주점 ',
+  contents: [],
 }];
 export default review;
 export type { iReview };

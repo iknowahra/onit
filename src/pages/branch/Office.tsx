@@ -91,7 +91,7 @@ const SliderSlap = styled.div`
 `;
 
 function PhotoCard(content: iCard, branch: number, index: number) {
-  const photos = [[photo1, photo2, photo3], [photo1, photo2, photo3], [photo1, photo2, photo4]];
+  const photos = [[photo1, photo2, photo3], [photo1, photo2, photo3], [photo1, photo2, photo4], [photo1, photo2, photo3]];
 
   return (
     < CardStyle key={index} >
@@ -107,7 +107,7 @@ function PhotoCard(content: iCard, branch: number, index: number) {
   )
 }
 
-function Products() {
+function Office() {
   const [branch, _] = useBranch();
   const [info, setInfo] = useState<iOfficeInfo>();
 
@@ -144,4 +144,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Office;

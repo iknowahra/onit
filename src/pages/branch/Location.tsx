@@ -31,7 +31,7 @@ const Inner = styled.div`
 
 
 
-function Information() {
+function Location() {
   const [branch, _] = useBranch();
   const [info, setInfo] = useState<iBranchInfo>();
 
@@ -50,4 +50,4 @@ function Information() {
   );
 }
 
-export default Information;
+export default Location;

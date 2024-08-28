@@ -34,6 +34,15 @@ import officePhoto37 from "../../assets/3/office08.jpg";
 import officePhoto38 from "../../assets/3/officeblock01.jpeg";
 import officePhoto39 from "../../assets/3/cctv.jpg";
 
+import officePhoto41 from "../../assets/4/officeMain01.png";
+import officePhoto42 from "../../assets/4/officeMain02.jpeg";
+import officePhoto43 from "../../assets/4/officeMain03.jpeg";
+import officePhoto44 from "../../assets/4/logo.png";
+import officePhoto45 from "../../assets/4/logo.png";
+import officePhoto46 from "../../assets/4/logo.png";
+import officePhoto47 from "../../assets/4/logo.png";
+import officePhoto48 from "../../assets/4/logo.png";
+import officePhoto49 from "../../assets/4/logo.png";
 
 
 import { useBranch } from "../../contexts/BranchContext";
@@ -43,7 +52,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: auto;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1250px) {
     height: auto;
     padding-top: 2rem;
   }
@@ -59,7 +68,7 @@ const Inner = styled.div`
   flex-wrap: wrap;
   border-top: ${({ theme }) => theme.boxBorder};
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1250px) {
     flex-direction: column;
     width: 80%;
     height: auto;
@@ -97,7 +106,7 @@ const Inner = styled.div`
       }
     }
 
-    @media (max-width: 1300px) {
+    @media (max-width: 1250px) {
         border : 1px solid red;
         display: none;
     }
@@ -119,7 +128,7 @@ const Inner = styled.div`
 
 const SliderWrapper = styled.div`
   display: none;
-  @media (max-width: 1300px) {
+  @media (max-width: 1250px) {
     display: block;
     width: 100%;
     /* overflow: hidden; */
@@ -139,7 +148,7 @@ const SliderWrapper = styled.div`
 `;
 
 
-function Guide() {
+function PhotoZone() {
   const [isOpen, setOpen] = useState(false);
   const [current, setCurrent] = useState(0);
   const [branch, _] = useBranch();
@@ -175,6 +184,17 @@ function Guide() {
     officePhoto37,
     officePhoto38,
     officePhoto39,
+  ],
+  [
+    officePhoto41,
+    officePhoto42,
+    officePhoto43,
+    officePhoto44,
+    officePhoto45,
+    officePhoto46,
+    officePhoto47,
+    officePhoto48,
+    officePhoto49,
   ]];
   const handleModal = (open: boolean) => {
     setOpen(open);
@@ -182,11 +202,6 @@ function Guide() {
 
   const settings = {
     arrows: true,
-    // dots: true,
-    // infinite: true,
-    // fade: true,
-    // autoplay: true,
-    // autoplaySpeed: 4000,
   };
   return (
     <Wrapper id="menu4">
@@ -224,4 +239,4 @@ function Guide() {
     </Wrapper>
   );
 }
-export default Guide;
+export default PhotoZone;

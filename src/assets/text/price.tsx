@@ -304,7 +304,54 @@ const priceInfo: iPrice[] = [
         ],
       }
     ]
-  }
+  },
+  {
+    subject: '강원 원주점 이용가격 안내',
+    detail: "합리적인 가격으로 최적화된 업무 환경을 제공합니다.",
+    reservation: "",
+    tab: [
+      {
+        category: "office",
+        title: '비상주 사무실',
+        price: [
+          {
+            title: '비상주 사무실 6개월',
+            detail: '보증금 없음. 월 3만 5만원',
+            price: "231,000원(VAT포함)"
+          },
+          {
+
+            title: '비상주 사무실 1년',
+            detail: '보증금 없음. 월 3만원',
+            price: "396,000원(VAT포함)"
+          },
+          {
+            badge: '추천⭐️',
+            title: '비상주 사무실 2년',
+            detail: '보증금 없음. 월 2만원',
+            price: "528,000원(VAT포함)"
+          },
+        ],
+      },
+      {
+        category: "study",
+        title: '상주 사무실',
+        price: [
+          {
+            badge: 'Best',
+            title: '상주사무실(2~4인) 1개월',
+            detail: '넓은 공간, 공용 복합기',
+            price: "35 ~ 45만원",
+          },
+          {
+            title: '공용 컴퓨터 & 복합기',
+            detail: '무료 사용',
+            price: "무료 제공"
+          },
+        ],
+      },
+    ]
+  },
 ];
 
 export default priceInfo;
