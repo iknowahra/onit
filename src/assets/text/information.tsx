@@ -148,7 +148,7 @@ const information: iBranchInfo[] = [
     phone: "010-4239-8279",
     time: "00:00 - 24:00(연중무휴)",
     service: {
-      park: false, // 일반주차여부
+      park: true, // 일반주차여부
       robotPark: false, //기계식주차여부
       wifi: true,  //무선와이파이여부
       genderSeparateToilet: false, //남녀화장실구분여부

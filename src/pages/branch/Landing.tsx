@@ -5,7 +5,7 @@ import logo from "../../assets/logoWhite.png";
 import office1 from "../../assets/1/officeMain01.jpg";
 import office2 from "../../assets/2/officeMain01.jpg";
 import office3 from "../../assets/3/officeMain01.png";
-import office4 from "../../assets/4/officeMain01.png";
+import office4 from "../../assets/4/officeLanding.jpg";
 import { useBranch } from "../../contexts/BranchContext";
 import info, { iIntroDetail } from "../../assets/text/landing";
 

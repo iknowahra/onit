@@ -17,9 +17,9 @@ import photo31 from '../../assets/3/office07.jpg';
 import photo32 from '../../assets/3/printer.jpg';
 import photo33 from '../../assets/3/share.jpg';
 
-import photo41 from '../../assets/4/officeMain01.png';
-import photo42 from '../../assets/4/officeMain02.jpeg';
-import photo43 from '../../assets/4/officeMain03.jpeg';
+import photo41 from '../../assets/4/office05.jpg';
+import photo42 from '../../assets/4/office11.jpg';
+import photo43 from '../../assets/4/office18.jpg';
 
 
 
@@ -41,6 +41,7 @@ const Container = styled.div`
 
   @media (max-width: 780px) {
     height: auto;
+
   }
 `;
 

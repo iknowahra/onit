@@ -339,9 +339,15 @@ const priceInfo: iPrice[] = [
         price: [
           {
             badge: 'Best',
-            title: '상주사무실(2~4인) 1개월',
+            title: '상주사무실(2인) 1개월',
             detail: '넓은 공간, 공용 복합기',
-            price: "35 ~ 45만원",
+            price: "35~40만원(VAT포함)",
+          },
+          {
+            badge: '추천⭐️',
+            title: '상주사무실(3인) 1개월',
+            detail: '넓은 공간, 공용 복합기',
+            price: "변동",
           },
           {
             title: '공용 컴퓨터 & 복합기',

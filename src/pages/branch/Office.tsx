@@ -19,9 +19,10 @@ interface iCard {
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
+  padding-bottom : 2rem;
 `;
 
 const Inner = styled.div`

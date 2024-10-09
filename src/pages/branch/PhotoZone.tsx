@@ -34,16 +34,24 @@ import officePhoto37 from "../../assets/3/office08.jpg";
 import officePhoto38 from "../../assets/3/officeblock01.jpeg";
 import officePhoto39 from "../../assets/3/cctv.jpg";
 
-import officePhoto41 from "../../assets/4/officeMain01.png";
-import officePhoto42 from "../../assets/4/officeMain02.jpeg";
-import officePhoto43 from "../../assets/4/officeMain03.jpeg";
-import officePhoto44 from "../../assets/4/logo.png";
-import officePhoto45 from "../../assets/4/logo.png";
-import officePhoto46 from "../../assets/4/logo.png";
-import officePhoto47 from "../../assets/4/logo.png";
-import officePhoto48 from "../../assets/4/logo.png";
-import officePhoto49 from "../../assets/4/logo.png";
-
+import officePhoto41 from "../../assets/4/office01.jpg";
+import officePhoto42 from "../../assets/4/office02.jpg";
+import officePhoto43 from "../../assets/4/office03.jpg";
+import officePhoto44 from "../../assets/4/office04.jpg";
+import officePhoto45 from "../../assets/4/office05.jpg";
+import officePhoto46 from "../../assets/4/office06.jpg";
+import officePhoto47 from "../../assets/4/office07.jpg";
+import officePhoto48 from "../../assets/4/office08.jpg";
+import officePhoto49 from "../../assets/4/office09.jpg";
+import officePhoto411 from "../../assets/4/office11.jpg";
+import officePhoto421 from "../../assets/4/office12.jpg";
+import officePhoto431 from "../../assets/4/office13.jpg";
+import officePhoto441 from "../../assets/4/office14.jpg";
+import officePhoto451 from "../../assets/4/office15.jpg";
+import officePhoto461 from "../../assets/4/office16.jpg";
+import officePhoto471 from "../../assets/4/office17.jpg";
+import officePhoto481 from "../../assets/4/office18.jpg";
+import officePhoto491 from "../../assets/4/office19.jpg";
 
 import { useBranch } from "../../contexts/BranchContext";
 import Subject from "../../components/Subject";
@@ -195,6 +203,15 @@ function PhotoZone() {
     officePhoto47,
     officePhoto48,
     officePhoto49,
+    officePhoto411,
+    officePhoto421,
+    officePhoto431,
+    officePhoto441,
+    officePhoto451,
+    officePhoto461,
+    officePhoto471,
+    officePhoto481,
+    officePhoto491,
   ]];
   const handleModal = (open: boolean) => {
     setOpen(open);

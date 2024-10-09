@@ -21,10 +21,10 @@ import officePhoto32 from '../../assets/3/office06.jpg';
 import officePhoto33 from '../../assets/3/officeblock02.jpg';
 import officePhoto34 from '../../assets/3/office08.jpg';
 
-import officePhoto41 from '../../assets/4/officeMain02.jpeg';
-import officePhoto42 from '../../assets/4/officeMain02.jpeg';
-import officePhoto43 from '../../assets/4/officeMain03.jpeg';
-import officePhoto44 from '../../assets/4/officeMain03.jpeg';
+import officePhoto41 from '../../assets/4/officeMain01.jpg';
+import officePhoto42 from '../../assets/4/officeMain02.jpg';
+import officePhoto43 from '../../assets/4/officeMain03.jpg';
+
 
 
 import studyPhoto11 from '../../assets/1/studyMain01.jpg';
@@ -43,9 +43,10 @@ import studyPhoto28 from '../../assets/2/womenforone2.jpg';
 
 import studyPhoto31 from '../../assets/3/office09.jpg';
 
-import studyPhoto41 from '../../assets/4/logo.png';
 
-
+import studyPhoto41 from '../../assets/4/officeForTwo.jpg';
+import studyPhoto42 from '../../assets/4/officeForThree.jpg';
+import studyPhoto43 from '../../assets/4/officeMain03.jpg';
 
 
 
@@ -141,10 +142,6 @@ const RightInner = styled.div`
     width: 100%;
     height: 30rem !important;
 
-    &:nth-child(1),
-    :nth-child(3) {
-      margin: 1rem 0;
-    }
     .title {
       font-size: 1.2rem;
     }
@@ -229,13 +226,13 @@ function Price() {
     [officePhoto11, officePhoto12, officePhoto13, officePhoto14],
     [officePhoto21, officePhoto22, officePhoto23, officePhoto24],
     [officePhoto31, officePhoto32, officePhoto33, officePhoto34],
-    [officePhoto41, officePhoto42, officePhoto43, officePhoto44],
+    [officePhoto41, officePhoto42, officePhoto43, officePhoto43],
   ];
   const studyPhotos = [
     [studyPhoto11, studyPhoto12, studyPhoto13],
     [studyPhoto21, studyPhoto21, studyPhoto22, studyPhoto22, studyPhoto22, studyPhoto22,],
     [studyPhoto31, studyPhoto31, studyPhoto31, studyPhoto31],
-    [studyPhoto41, studyPhoto41],
+    [studyPhoto41, studyPhoto42, studyPhoto43],
   ];
 
   const otherPhotos = [

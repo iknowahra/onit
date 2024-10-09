@@ -5,7 +5,7 @@ import { useBranch } from "../contexts/BranchContext";
 import event1 from "../assets/1/event.jpeg";
 import event2 from "../assets/2/event.jpeg";
 import event3 from "../assets/3/event.jpg";
-import event4 from "../assets/4/event.png";
+import event4 from "../assets/4/logo.png";
 import styled from "styled-components";
 
 interface Props {
