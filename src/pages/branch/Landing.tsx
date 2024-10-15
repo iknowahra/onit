@@ -119,7 +119,7 @@ const ScrollDown = styled.a`
   text-align: center;
   bottom: 1rem;
   padding: 3px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: ${({ theme }) => theme.color.grey};
   border-radius: 10rem;
   animation: scroll-down 1.5s infinite ease-in-out;
@@ -188,9 +188,7 @@ function Landing() {
             </div>
           </Desc>
           <ScrollDown onClick={() => handleScroll(1)}>
-            온잇의 서비스가 궁금하시다면?
-            <i className="fa fa-angle-double-down" aria-hidden="true"></i>
-            <i className="fa fa-angle-double-down" aria-hidden="true"></i>
+            {currBranch?.scroll}
           </ScrollDown>
         </Contents>
       </Inner>

@@ -21,9 +21,10 @@ import officePhoto32 from '../../assets/3/office06.jpg';
 import officePhoto33 from '../../assets/3/officeblock02.jpg';
 import officePhoto34 from '../../assets/3/office08.jpg';
 
-import officePhoto41 from '../../assets/4/officeMain01.jpg';
-import officePhoto42 from '../../assets/4/officeMain02.jpg';
-import officePhoto43 from '../../assets/4/officeMain03.jpg';
+// 비상주 사무실
+import officePhoto41 from '../../assets/4/officeMain01.jpg'; // 6개월
+import officePhoto42 from '../../assets/4/nonOffice1yr.jpeg'; // 1년
+import officePhoto43 from '../../assets/4/nonOffice2yr.jpeg'; // 2년
 
 
 
@@ -44,9 +45,10 @@ import studyPhoto28 from '../../assets/2/womenforone2.jpg';
 import studyPhoto31 from '../../assets/3/office09.jpg';
 
 
-import studyPhoto41 from '../../assets/4/officeForTwo.jpg';
-import studyPhoto42 from '../../assets/4/officeForThree.jpg';
-import studyPhoto43 from '../../assets/4/officeMain03.jpg';
+// 상주 사무실
+import studyPhoto41 from '../../assets/4/officeForTwo.jpg';   // 2인
+import studyPhoto42 from '../../assets/4/officeForThree.jpg'; // 3인
+import studyPhoto43 from '../../assets/4/printer.jpeg';  // 프린터
 
 
 

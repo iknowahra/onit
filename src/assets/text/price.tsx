@@ -338,16 +338,16 @@ const priceInfo: iPrice[] = [
         title: '상주 사무실',
         price: [
           {
-            badge: 'Best',
+            badge: '오픈 할인가🔥',
             title: '상주사무실(2인) 1개월',
-            detail: '넓은 공간, 공용 복합기',
-            price: "35~40만원(VAT포함)",
+            detail: '4평, 냉난방기 무료',
+            price: "35~40만원(VAT별도)",
           },
           {
-            badge: '추천⭐️',
+            badge: '오픈 할인가🔥',
             title: '상주사무실(3인) 1개월',
-            detail: '넓은 공간, 공용 복합기',
-            price: "변동",
+            detail: '5평, 냉난방기 무료',
+            price: "40~45만원(VAT별도)",
           },
           {
             title: '공용 컴퓨터 & 복합기',

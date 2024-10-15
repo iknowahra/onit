@@ -143,7 +143,7 @@ const information: iBranchInfo[] = [
     address:
       "강원특별자치도 원주시 치악로 1555, 201호",
     oldAddress: "강원특별자치도 원주시 관설동 1461-1, 201호",
-    map: "https://naver.me/xDJjEaJB",
+    map: "https://naver.me/xucEaRBU",
     tel: "",
     phone: "010-4239-8279",
     time: "00:00 - 24:00(연중무휴)",

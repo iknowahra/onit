@@ -46,12 +46,15 @@ import officePhoto49 from "../../assets/4/office09.jpg";
 import officePhoto411 from "../../assets/4/office11.jpg";
 import officePhoto421 from "../../assets/4/office12.jpg";
 import officePhoto431 from "../../assets/4/office13.jpg";
-import officePhoto441 from "../../assets/4/office14.jpg";
 import officePhoto451 from "../../assets/4/office15.jpg";
 import officePhoto461 from "../../assets/4/office16.jpg";
 import officePhoto471 from "../../assets/4/office17.jpg";
 import officePhoto481 from "../../assets/4/office18.jpg";
 import officePhoto491 from "../../assets/4/office19.jpg";
+import officePhoto412 from "../../assets/4/common01.jpeg";
+import officePhoto422 from "../../assets/4/common02.jpeg";
+import officePhoto432 from "../../assets/4/common03.jpeg";
+import officePhoto442 from "../../assets/4/common04.jpeg";
 
 import { useBranch } from "../../contexts/BranchContext";
 import Subject from "../../components/Subject";
@@ -206,12 +209,15 @@ function PhotoZone() {
     officePhoto411,
     officePhoto421,
     officePhoto431,
-    officePhoto441,
     officePhoto451,
     officePhoto461,
     officePhoto471,
     officePhoto481,
     officePhoto491,
+    officePhoto412,
+    officePhoto422,
+    officePhoto432,
+    officePhoto442,
   ]];
   const handleModal = (open: boolean) => {
     setOpen(open);
