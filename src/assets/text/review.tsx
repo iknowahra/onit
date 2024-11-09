@@ -84,7 +84,7 @@ const review: iReview[] = [{
 },
 {
   main: '사용자들의 생생 리뷰',
-  sub: '온잇 공유오피스 & 스터디카페',
+  sub: '온잇 공유오피스',
   subTitle: '서울 영등포구청점 ',
   contents: [
     {
@@ -122,8 +122,14 @@ const review: iReview[] = [{
 },
 {
   main: '사용자들의 생생 리뷰',
-  sub: '온잇 공유오피스 & 스터디카페',
+  sub: '온잇 공유오피스',
   subTitle: '강원 원주점 ',
+  contents: [],
+},
+{
+  main: '사용자들의 생생 리뷰',
+  sub: '온잇 공유오피스',
+  subTitle: '대구 칠곡점 ',
   contents: [],
 }];
 export default review;

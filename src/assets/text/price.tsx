@@ -338,21 +338,63 @@ const priceInfo: iPrice[] = [
         title: '상주 사무실',
         price: [
           {
-            badge: '오픈 할인가🔥',
+            badge: '🔥오픈 할인가🔥',
             title: '상주사무실(2인) 1개월',
             detail: '4평, 냉난방기 무료',
-            price: "35~40만원(VAT별도)",
+            price: "27~33만원(VAT별도)",
           },
           {
-            badge: '오픈 할인가🔥',
+            badge: '🔥오픈 할인가🔥',
             title: '상주사무실(3인) 1개월',
             detail: '5평, 냉난방기 무료',
-            price: "40~45만원(VAT별도)",
+            price: "36만원(VAT별도)",
           },
           {
             title: '공용 컴퓨터 & 복합기',
             detail: '무료 사용',
             price: "무료 제공"
+          },
+        ],
+      },
+    ]
+  },
+  {
+    subject: '대구 칠곡점 이용가격 안내',
+    detail: "성공적인 비즈니스를 위한 비상주 사무실",
+    reservation: "",
+    tab: [
+      {
+        category: "office",
+        title: '비상주 사무실',
+        price: [
+          {
+            title: '비상주 사무실 6개월',
+            detail: '보증금 없음. 월 3만 5만원',
+            price: "210,000원(VAT포함)"
+          },
+          {
+
+            title: '비상주 사무실 1년',
+            detail: '보증금 없음. 월 2.8만원',
+            price: "336,000원(VAT포함)"
+          },
+          {
+            badge: '추천⭐️',
+            title: '비상주 사무실 2년',
+            detail: '보증금 없음. 월 2만원',
+            price: "480,000원(VAT포함)"
+          },
+        ],
+      },
+      {
+        category: "study",
+        title: '상주 사무실',
+        price: [
+          {
+            badge: '🚧오픈 준비중🚧',
+            title: '상주사무실 준비중',
+            detail: '쾌적한 사무실 준비중',
+            price: "미정(오픈전)",
           },
         ],
       },

@@ -165,6 +165,38 @@ const information: iBranchInfo[] = [
       email: "onitspace@naver.com" //대표자이메일
     }
   },
+  {
+    path: "daegu",
+    alias: "대구 칠곡점",
+    event: true,
+    name: "대구 칠곡 5호점",
+    lat: 35.948077316856, //위도
+    lng: 128.56727546143, //경도
+    address:
+      "대구 북구 학정동로 47 2층 서측",
+    oldAddress: "대구 북구 학정동 976 2층 서측",
+    map: "https://naver.me/5OQv7y7D",
+    tel: "",
+    phone: "0507-1478-5053",
+    time: "00:00 - 24:00(연중무휴)",
+    service: {
+      park: true, // 일반주차여부
+      robotPark: false, //기계식주차여부
+      wifi: true,  //무선와이파이여부
+      genderSeparateToilet: true, //남녀화장실구분여부
+    },
+    account: {
+      owner: "주식회사 리리컴퍼니",
+      bank: "국민은행",
+      accountNo: "083701-04-095392"
+    },
+    business: {
+      name: "주식회사 리리컴퍼니",//상호명
+      owner: "김정자", //사업대표자명
+      businessNo: "303-81-81707", //사업자번호
+      email: "" //대표자이메일
+    }
+  },
 ];
 
 export default information;

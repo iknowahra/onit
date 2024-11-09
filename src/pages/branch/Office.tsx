@@ -92,7 +92,7 @@ const SliderSlap = styled.div`
 `;
 
 function PhotoCard(content: iCard, branch: number, index: number) {
-  const photos = [[photo1, photo2, photo3], [photo1, photo2, photo3], [photo1, photo2, photo4], [photo1, photo2, photo3]];
+  const photos = [[photo1, photo2, photo3], [photo1, photo2, photo3], [photo1, photo2, photo4], [photo1, photo2, photo3], [photo1, photo2, photo3]];
 
   return (
     < CardStyle key={index} >

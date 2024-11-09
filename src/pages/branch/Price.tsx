@@ -26,6 +26,10 @@ import officePhoto41 from '../../assets/4/officeMain01.jpg'; // 6개월
 import officePhoto42 from '../../assets/4/nonOffice1yr.jpeg'; // 1년
 import officePhoto43 from '../../assets/4/nonOffice2yr.jpeg'; // 2년
 
+import officePhoto51 from '../../assets/5/chilgok_price2.png'; // 6개월
+import officePhoto52 from '../../assets/5/chilgok_price3.png'; // 1년
+import officePhoto53 from '../../assets/5/chilgok_price4.png'; // 2년
+
 
 
 import studyPhoto11 from '../../assets/1/studyMain01.jpg';
@@ -49,6 +53,9 @@ import studyPhoto31 from '../../assets/3/office09.jpg';
 import studyPhoto41 from '../../assets/4/officeForTwo.jpg';   // 2인
 import studyPhoto42 from '../../assets/4/officeForThree.jpg'; // 3인
 import studyPhoto43 from '../../assets/4/printer.jpeg';  // 프린터
+
+// 칠곡 상주 사무실
+import studyPhoto51 from '../../assets/5/chilgok_price1.png'; // 준비중
 
 
 
@@ -229,12 +236,14 @@ function Price() {
     [officePhoto21, officePhoto22, officePhoto23, officePhoto24],
     [officePhoto31, officePhoto32, officePhoto33, officePhoto34],
     [officePhoto41, officePhoto42, officePhoto43, officePhoto43],
+    [officePhoto51, officePhoto52, officePhoto53],
   ];
   const studyPhotos = [
     [studyPhoto11, studyPhoto12, studyPhoto13],
     [studyPhoto21, studyPhoto21, studyPhoto22, studyPhoto22, studyPhoto22, studyPhoto22,],
     [studyPhoto31, studyPhoto31, studyPhoto31, studyPhoto31],
     [studyPhoto41, studyPhoto42, studyPhoto43],
+    [studyPhoto51],
   ];
 
   const otherPhotos = [

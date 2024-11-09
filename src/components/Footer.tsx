@@ -215,16 +215,7 @@ function Footer() {
                   return (
                     address &&
                     branch == branch && (
-                      <DisplayFlex key={branch}>
-                        <BranchLabel onClick={() => setBranch(branch)}>{name}</BranchLabel>
-                        <a href={map} target="_blank">
-                          {address}
-                        </a>
-                        <BranchInfo>
-                          <a href={'tel:' + phone.replace(/\D/g, '')}>Tel : {phone}</a>
-                          <a href={'tel:' + tel.replace(/\D/g, '')}>{tel}</a>
-                        </BranchInfo>
-                      </DisplayFlex>
+                      <BranchLabel onClick={() => setBranch(branch)}>{name}</BranchLabel>
                     )
                   );
                 })}

@@ -6,6 +6,7 @@ import event1 from "../assets/1/event.jpeg";
 import event2 from "../assets/2/event.jpeg";
 import event3 from "../assets/3/event.jpg";
 import event4 from "../assets/4/logo.png";
+import event5 from "../assets/5/chilgok_event.png";
 import styled from "styled-components";
 
 interface Props {
@@ -39,7 +40,7 @@ const CheckStyle = styled(Form.Check)`
 function EventModal({ title, isOpen, handleModal }: Props) {
   const [branch, _] = useBranch();
   const [close, setClose] = useState(0);
-  const photos = [event1, event2, event3, event4];
+  const photos = [event1, event2, event3, event4, event5];
   const closeModal = (open: boolean, close24: boolean) => {
     handleModal(open, close24);
   };

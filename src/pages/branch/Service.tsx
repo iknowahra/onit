@@ -21,6 +21,10 @@ import photo41 from '../../assets/4/office05.jpg';
 import photo42 from '../../assets/4/office11.jpg';
 import photo43 from '../../assets/4/office18.jpg';
 
+import photo51 from '../../assets/5/chilgok-op1.jpg';
+import photo52 from '../../assets/5/chilgok-op2.jpg';
+import photo53 from '../../assets/5/chilgok-op3.jpg';
+
 
 
 interface HeaderProps {
@@ -154,7 +158,7 @@ function Header({ main, sub }: HeaderProps) {
 function Service() {
   const [branch, _] = useBranch();
   const [name, setName] = useState("");
-  const photos: string[][] = [[photo11, photo12, photo13], [photo21, photo22, photo23], [photo31, photo32, photo33], [photo41, photo42, photo43]];
+  const photos: string[][] = [[photo11, photo12, photo13], [photo21, photo22, photo23], [photo31, photo32, photo33], [photo41, photo42, photo43], [photo51, photo52, photo53]];
 
   useEffect(() => {
     const office = information[branch];
@@ -168,10 +172,10 @@ function Service() {
         <p>대면 | 비대면 계약 모두 가능하며 연중무휴 상담이 가능합니다</p>
       </Title>
       <Inner>
-        {serviceInfo[branch]?.map((vision, index) => (
+        {serviceInfo[branch]?.map(({ main, sub }, index) => (
           <Contents key={index} index={index}>
-            <Header main={vision.main} sub={vision.sub} />
-            <img src={photos[branch][index]} alt={vision.main} />
+            <Header main={main} sub={sub} />
+            <img src={photos[branch][index]} alt={main} />
           </Contents>
         ))}
       </Inner>

@@ -8,6 +8,7 @@ import photo1 from '../assets/1/map.png';
 import photo2 from '../assets/2/map.png';
 import photo3 from '../assets/3/map.png';
 import photo4 from '../assets/4/map.png';
+import photo5 from '../assets/5/map.png';
 import { useBranch } from '../contexts/BranchContext';
 
 const ImgWrapper = styled.div`
@@ -218,7 +219,7 @@ const icons = {
 };
 
 function Information({ info }: Props) {
-  const photos = [photo1, photo2, photo3, photo4];
+  const photos = [photo1, photo2, photo3, photo4, photo5];
   const [currPhoto, setPhoto] = useState(photos[0]);
   const [branch, _] = useBranch();
 

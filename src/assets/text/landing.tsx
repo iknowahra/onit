@@ -62,6 +62,7 @@ const Landing: iLanding = {
     },
     { path: "yeongdeungpo", label: "서울 영등포구청 3호점", value: 2 },
     { path: "wonju", label: "강원 원주시 4호점", value: 3 },
+    { path: "daegu", label: "대구 칠곡점 5호점", value: 4 },
   ],
   intro: [{
     title: "인천 원당점(비과밀억제권역)",
@@ -90,6 +91,13 @@ const Landing: iLanding = {
     detail: `강원 원주점은 비과밀억세권역으로 각종 세제혜택에 유리합니다.
 상주/비상주 오피스를 전국에서 가장 저렴한 가격으로 이용할 수 있습니다.`,
     tel: "010-4239-8279",
+    scroll: "오픈 특가 이벤트 진행 중!✨✨"
+  },
+  {
+    title: "대구 칠곡점(비과밀억제권역)",
+    detail: `대구 칠곡점은 학정역 근처에 인접해있습니다.
+상주(준비중)/비상주 오피스를 합리적인 가격으로 이용할 수 있습니다.`,
+    tel: "0507-1478-5053",
     scroll: "오픈 특가 이벤트 진행 중!✨✨"
   },
   ]
