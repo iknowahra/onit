@@ -18,7 +18,7 @@ interface iBusinessInfo {
   email: string; // 대표자이메일
 }
 
-interface iBranchInfo {
+interface iBranchInfoDetail {
   path: string; // router path
   name: string; // 지점 이름
   event: boolean;
@@ -36,8 +36,10 @@ interface iBranchInfo {
   business?: iBusinessInfo; // 사업자 정보
 }
 
-const information: iBranchInfo[] = [
-  {
+type iBranchInfo = Record<string, iBranchInfoDetail>;
+
+const information: iBranchInfo = {
+  onedang: {
     path: "onedang",
     alias: "인천원당점",
     name: "인천 원당 1호점",
@@ -69,7 +71,7 @@ const information: iBranchInfo[] = [
       email: "onitspace@naver.com" //대표자이메일
     }
   },
-  {
+  pyeongtaek: {
     path: "pyeongtaek",
     alias: "경기평택점",
     event: true,
@@ -101,7 +103,7 @@ const information: iBranchInfo[] = [
       email: "onitspace@naver.com" //대표자이메일
     }
   },
-  {
+  yeongdeungpo: {
     path: "yeongdeungpo",
     alias: "영등포구청점",
     name: "서울 영등포구청점 3호점",
@@ -133,7 +135,7 @@ const information: iBranchInfo[] = [
       email: "" //대표자이메일
     }
   },
-  {
+  wonju: {
     path: "wonju",
     alias: "강원원주점",
     event: false,
@@ -165,7 +167,7 @@ const information: iBranchInfo[] = [
       email: "onitspace@naver.com" //대표자이메일
     }
   },
-  {
+  daegu: {
     path: "daegu",
     alias: "대구 칠곡점",
     event: true,
@@ -196,8 +198,8 @@ const information: iBranchInfo[] = [
       businessNo: "303-81-81707", //사업자번호
       email: "" //대표자이메일
     }
-  },
-];
+  }
+}
 
 export default information;
-export type { iBranchInfo };
+export type { iBranchInfo, iBranchInfoDetail };

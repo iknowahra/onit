@@ -163,62 +163,63 @@ function PhotoZone() {
   const [isOpen, setOpen] = useState(false);
   const [current, setCurrent] = useState(0);
   const [branch, _] = useBranch();
-  const photos = [[
-    officePhoto11,
-    officePhoto12,
-    officePhoto13,
-    officePhoto14,
-    officePhoto15,
-    officePhoto16,
-    officePhoto17,
-    officePhoto18,
-    officePhoto19,
-  ],
-  [
-    officePhoto21,
-    officePhoto22,
-    officePhoto23,
-    officePhoto24,
-    officePhoto25,
-    officePhoto26,
-    officePhoto27,
-    officePhoto28,
-    officePhoto29,
-  ],
-  [
-    officePhoto31,
-    officePhoto32,
-    officePhoto33,
-    officePhoto34,
-    officePhoto35,
-    officePhoto36,
-    officePhoto37,
-    officePhoto38,
-    officePhoto39,
-  ],
-  [
-    officePhoto41,
-    officePhoto42,
-    officePhoto43,
-    officePhoto44,
-    officePhoto45,
-    officePhoto46,
-    officePhoto47,
-    officePhoto48,
-    officePhoto49,
-    officePhoto411,
-    officePhoto421,
-    officePhoto431,
-    officePhoto451,
-    officePhoto461,
-    officePhoto471,
-    officePhoto481,
-    officePhoto491,
-    officePhoto412,
-    officePhoto422,
-    officePhoto432,
-    officePhoto442,
-  ]];
+  const photos: { [key: string]: string[] } = {
+    "onedang": [
+      officePhoto11,
+      officePhoto12,
+      officePhoto13,
+      officePhoto14,
+      officePhoto15,
+      officePhoto16,
+      officePhoto17,
+      officePhoto18,
+      officePhoto19,
+    ], "pyeongtaek": [
+      officePhoto21,
+      officePhoto22,
+      officePhoto23,
+      officePhoto24,
+      officePhoto25,
+      officePhoto26,
+      officePhoto27,
+      officePhoto28,
+      officePhoto29,
+    ], "yeongdeungpo": [
+      officePhoto31,
+      officePhoto32,
+      officePhoto33,
+      officePhoto34,
+      officePhoto35,
+      officePhoto36,
+      officePhoto37,
+      officePhoto38,
+      officePhoto39,
+    ], "wonju": [
+      officePhoto41,
+      officePhoto42,
+      officePhoto43,
+      officePhoto44,
+      officePhoto45,
+      officePhoto46,
+      officePhoto47,
+      officePhoto48,
+      officePhoto49,
+      officePhoto411,
+      officePhoto421,
+      officePhoto431,
+      officePhoto451,
+      officePhoto461,
+      officePhoto471,
+      officePhoto481,
+      officePhoto491,
+      officePhoto412,
+      officePhoto422,
+      officePhoto432,
+      officePhoto442,
+    ], "daegu": [
+
+    ]
+  };
   const handleModal = (open: boolean) => {
     setOpen(open);
   };
@@ -228,7 +229,7 @@ function PhotoZone() {
   };
   return (
     <Wrapper id="menu4">
-      {branch >= 0 && <Inner>
+      {branch !== "/" && <Inner>
         <Subject main="매장 사진" />
         {photos[branch]?.map((_, idx) => (
           <div
@@ -256,7 +257,7 @@ function PhotoZone() {
         </SliderWrapper>
       </Inner>
       }
-      {branch >= 0 && isOpen ? (
+      {branch !== "/" && isOpen ? (
         <Modal title={""} handleModal={handleModal} img={photos[branch][current]} />
       ) : null}
     </Wrapper>

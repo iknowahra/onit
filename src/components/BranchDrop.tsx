@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Dropdown } from "react-bootstrap";
 import { useBranch } from "../contexts/BranchContext";
-
+import { useNavigate } from "react-router-dom";
 
 import landingInfo from "../assets/text/landing";
 
@@ -25,24 +25,26 @@ const DropMenu = styled(Dropdown.Menu)`
 
 
 function BranchDrop() {
+    const router = useNavigate();
     const [branch, setBranch] = useBranch();
+    const branches = Object.keys(landingInfo.branches);
     return (
         <Drop>
             <DropToggle variant="secondary" id="dropdown-basic">
-                {landingInfo.branches.find(({ value }) => value === branch)?.label}
+                {landingInfo.branches[branch].label}
             </DropToggle>
             <DropMenu>
-                {landingInfo.branches.map(({ label, value }) => (
+                {branches.map((path) => (
                     <Dropdown.Item
-                        onClick={() => { setBranch(value) }}
-                        key={value}
-                        disabled={value < 0}
+                        onClick={() => setBranch(path)}
+                        key={path}
+                        disabled={path == '/'}
                         style={{
-                            color: value === branch ? "#F2722D" : "inherit",
-                            cursor: value < 0 ? "not-allowed" : "pointer",
+                            color: path === branch ? "#F2722D" : "inherit",
+                            cursor: path == '/' ? "not-allowed" : "pointer",
                         }}
                     >
-                        {label}
+                        {landingInfo.branches[path].label}
                     </Dropdown.Item>
                 ))}
             </DropMenu>

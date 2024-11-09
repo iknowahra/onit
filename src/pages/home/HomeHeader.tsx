@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../assets/logo.png";
 import { Dropdown } from "react-bootstrap";
@@ -139,6 +140,7 @@ function Header() {
     { name: "지점안내" },
   ];
 
+  const router = useNavigate();
   const [isOpenModal, setOpenModal] = useState(false);
   const [branch, setBranch] = useBranch();
   const [isScroll, setScroll] = useState(false);
@@ -169,12 +171,12 @@ function Header() {
         <img src={logo} alt="ON!T Logo" onClick={() => handleScroll(0)} />
         <Drop>
           <DropToggle variant="secondary" id="dropdown-basic">
-            {landingInfo.branches.find(({ value }) => value === branch)?.label}
+            {landingInfo.branches[branch].label}
           </DropToggle>
           <DropMenu>
-            {landingInfo.branches.map(({ label, value }) => (
+            {Object.entries(landingInfo.branches).map(([value, { label }]) => (
               <Dropdown.Item
-                onClick={() => setBranch(value)}
+                onClick={() => router(value !== '/' ? `/branch/${value}` : value)}
                 key={value}
                 style={{ color: value === branch ? "#F2722D" : "inherit" }}
               >

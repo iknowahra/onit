@@ -91,8 +91,8 @@ const SliderSlap = styled.div`
   }
 `;
 
-function PhotoCard(content: iCard, branch: number, index: number) {
-  const photos = [[photo1, photo2, photo3], [photo1, photo2, photo3], [photo1, photo2, photo4], [photo1, photo2, photo3], [photo1, photo2, photo3]];
+function PhotoCard(content: iCard, branch: string, index: number) {
+  const photos: { [key: string]: string[] } = { "onedang": [photo1, photo2, photo3], "pyeongtaek": [photo1, photo2, photo3], "yeongdeungpo": [photo1, photo2, photo4], "wonju": [photo1, photo2, photo3], "daegu": [photo1, photo2, photo3] };
 
   return (
     < CardStyle key={index} >
@@ -124,14 +124,14 @@ function Office() {
         </Mobile>
         <Wrapper>
           {
-            branch >= 0 &&
+            branch !== "/" &&
             info?.contents?.map((product, index) => PhotoCard(product, branch, index))
           }
         </Wrapper>
         <SliderWrapper>
           <Slider dots>
             {
-              branch >= 0 &&
+              branch !== "/" &&
               info?.contents?.map((product, index) => (
                 <SliderSlap key={index}>
                   {PhotoCard(product, branch, index)}

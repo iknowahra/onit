@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import Subject from '../../components/Subject';
-import branchInfo, { iBranchInfo } from '../../assets/text/information';
+import information, { iBranchInfoDetail } from '../../assets/text/information';
 import { useBranch } from '../../contexts/BranchContext';
 import Branch from '../../components/Information';
 
@@ -33,11 +33,11 @@ const Inner = styled.div`
 
 function Location() {
   const [branch, _] = useBranch();
-  const [info, setInfo] = useState<iBranchInfo>();
+  const [info, setInfo] = useState<iBranchInfoDetail>();
 
 
   useEffect(() => {
-    setInfo(branchInfo[branch]);
+    setInfo(information[branch]);
   }, [branch]);
 
   return (

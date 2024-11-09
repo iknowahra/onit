@@ -4,7 +4,7 @@ import OnitLogo from '../assets/logo.png';
 import landingInfo from '../assets/text/landing';
 
 import { useBranch } from '../contexts/BranchContext';
-import about from '../assets/text/information';
+import information from '../assets/text/information';
 import NaverLogo from './NaverLogo';
 
 const Wrapper = styled.div`
@@ -184,6 +184,7 @@ const BranchLabel = styled.a`
 function Footer() {
   const [_, setBranch] = useBranch();
 
+  const branches = Object.keys(information);
   return (
     <Wrapper>
       <Inner>
@@ -202,20 +203,22 @@ function Footer() {
             </PolicySns>
             <Address>
               <Branch>
-                {about.map(({ name, address, phone, tel, map }, branch) => {
-                  if (branch < 0) {
+                {branches.map((branch) => {
+                  if (branch !== '/') {
                     return (
-                      branch < 0 && (
+                      branch !== '/' && (
                         <a key={branch} onClick={() => setBranch(branch)}>
-                          {name}
+                          {information[branch].name}
                         </a>
                       )
                     );
                   }
                   return (
-                    address &&
+                    information[branch].address &&
                     branch == branch && (
-                      <BranchLabel onClick={() => setBranch(branch)}>{name}</BranchLabel>
+                      <BranchLabel key={branch} onClick={() => setBranch(branch)}>
+                        {information[branch].name}
+                      </BranchLabel>
                     )
                   );
                 })}

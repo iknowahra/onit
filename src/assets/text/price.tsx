@@ -1,4 +1,4 @@
-interface iPrice {
+interface iPriceDetail {
   subject: string;
   detail: string;
   reservation: string;
@@ -17,8 +17,10 @@ interface iPrice {
 
 }
 
-const priceInfo: iPrice[] = [
-  {
+type iPrice = Record<string, iPriceDetail>;
+
+const priceInfo: iPrice = {
+  onedang: {
     subject: '인천 원당점 이용가격 안내',
     detail: "합리적인 가격으로 최적화된 업무 환경을 제공합니다.",
     reservation: "",
@@ -78,7 +80,7 @@ const priceInfo: iPrice[] = [
       }
     ]
   },
-  {
+  pyeongtaek: {
     subject: '경기 평택점 이용가격 안내',
     detail: "편리하고 조용한 공간에서 집중하고 싶다면 온잇 경기평택점!",
     reservation: "https://naver.me/FqWSOJzk",
@@ -240,7 +242,7 @@ const priceInfo: iPrice[] = [
       },
     ]
   },
-  {
+  yeongdeungpo: {
     subject: '영등포구청점 이용가격 안내',
     detail: "거품없는 가격으로 최적화된 업무 환경을 제공합니다.",
     reservation: "https://naver.me/GRoOa2j9",
@@ -305,7 +307,7 @@ const priceInfo: iPrice[] = [
       }
     ]
   },
-  {
+  wonju: {
     subject: '강원 원주점 이용가격 안내',
     detail: "합리적인 가격으로 최적화된 업무 환경을 제공합니다.",
     reservation: "",
@@ -358,7 +360,7 @@ const priceInfo: iPrice[] = [
       },
     ]
   },
-  {
+  daegu: {
     subject: '대구 칠곡점 이용가격 안내',
     detail: "성공적인 비즈니스를 위한 비상주 사무실",
     reservation: "",
@@ -400,7 +402,7 @@ const priceInfo: iPrice[] = [
       },
     ]
   },
-];
+};
 
 export default priceInfo;
-export type { iPrice };
+export type { iPriceDetail };

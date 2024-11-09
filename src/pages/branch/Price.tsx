@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import priceInfo, { iPrice } from '../../assets/text/price';
+import priceInfo, { iPriceDetail } from '../../assets/text/price';
 
 import Subject from '../../components/Subject';
 import Tab from 'react-bootstrap/Tab';
@@ -229,22 +229,11 @@ const Reserve = styled.button`
 
 function Price() {
   const [branch, _] = useBranch();
-  const [currBranch, setBranch] = useState<iPrice>();
+  const [currBranch, setBranch] = useState<iPriceDetail>();
   const [defaultKey, setKey] = useState('office');
-  const officePhotos = [
-    [officePhoto11, officePhoto12, officePhoto13, officePhoto14],
-    [officePhoto21, officePhoto22, officePhoto23, officePhoto24],
-    [officePhoto31, officePhoto32, officePhoto33, officePhoto34],
-    [officePhoto41, officePhoto42, officePhoto43, officePhoto43],
-    [officePhoto51, officePhoto52, officePhoto53],
-  ];
-  const studyPhotos = [
-    [studyPhoto11, studyPhoto12, studyPhoto13],
-    [studyPhoto21, studyPhoto21, studyPhoto22, studyPhoto22, studyPhoto22, studyPhoto22,],
-    [studyPhoto31, studyPhoto31, studyPhoto31, studyPhoto31],
-    [studyPhoto41, studyPhoto42, studyPhoto43],
-    [studyPhoto51],
-  ];
+  const officePhotos: { [key: string]: string[] } = { "onedang": [officePhoto11, officePhoto12, officePhoto13, officePhoto14], "pyeongtaek": [officePhoto21, officePhoto22, officePhoto23, officePhoto24], "yeongdeungpo": [officePhoto31, officePhoto32, officePhoto33, officePhoto34], "wonju": [officePhoto41, officePhoto42, officePhoto43, officePhoto43], "daegu": [officePhoto51, officePhoto52, officePhoto53] };
+  const studyPhotos: { [key: string]: string[] } = { "onedang": [studyPhoto11, studyPhoto12, studyPhoto13], "pyeongtaek": [studyPhoto21, studyPhoto21, studyPhoto22, studyPhoto22, studyPhoto22, studyPhoto22,], "yeongdeungpo": [studyPhoto31, studyPhoto31, studyPhoto31, studyPhoto31], "wonju": [studyPhoto41, studyPhoto42, studyPhoto43], "daegu": [studyPhoto51] };
+
 
   const otherPhotos = [
     [studyPhoto23, studyPhoto24, studyPhoto25, studyPhoto25],
@@ -272,7 +261,7 @@ function Price() {
         <Subject main={currBranch?.subject || ''} sub={currBranch?.detail || ''} />
         <TabsWrapper defaultActiveKey={"office"} activeKey={defaultKey}
           onSelect={handleSelect}>
-          {branch >= 0 && currBranch?.tab?.map((tab, idx) => (
+          {branch !== "/" && currBranch?.tab?.map((tab, idx) => (
             <Tab key={idx} eventKey={tab.category} title={tab.title}>
               <TabWrapper>
                 {tab.price.map((item, itemIdx) => (

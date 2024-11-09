@@ -2,11 +2,11 @@ import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { useBranch } from "../contexts/BranchContext";
-import event1 from "../assets/1/event.jpeg";
-import event2 from "../assets/2/event.jpeg";
-import event3 from "../assets/3/event.jpg";
-import event4 from "../assets/4/logo.png";
-import event5 from "../assets/5/chilgok_event.png";
+import eventOnedang from "../assets/1/event.jpeg";
+import eventPyeongtaek from "../assets/2/event.jpeg";
+import eventYeongdeungpo from "../assets/3/event.jpg";
+import eventWonju from "../assets/4/logo.png";
+import eventDaegu from "../assets/5/chilgok_event.png";
 import styled from "styled-components";
 
 interface Props {
@@ -40,7 +40,13 @@ const CheckStyle = styled(Form.Check)`
 function EventModal({ title, isOpen, handleModal }: Props) {
   const [branch, _] = useBranch();
   const [close, setClose] = useState(0);
-  const photos = [event1, event2, event3, event4, event5];
+  const photos = {
+    onedang: eventOnedang,
+    pyeongtaek: eventPyeongtaek,
+    yeongdeungpo: eventYeongdeungpo,
+    wonju: eventWonju,
+    daegu: eventDaegu
+  };
   const closeModal = (open: boolean, close24: boolean) => {
     handleModal(open, close24);
   };
@@ -57,7 +63,7 @@ function EventModal({ title, isOpen, handleModal }: Props) {
       </Modal.Header>
       <Modal.Body>
         <ImgWrapper>
-          <img src={photos[branch]} alt="event" />
+          <img src={photos[branch as keyof typeof photos]} alt="event" />
         </ImgWrapper>
         <CheckStyle
           type="checkbox"

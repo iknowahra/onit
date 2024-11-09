@@ -18,13 +18,16 @@ function AppRouter() {
   const location = useLocation();
   const [branch, _] = useBranch();
 
-  useEffect(() => {
-    const pathName = branch < 0 ? "" : information[branch].path;
-    const targetPath = branch < 0 ? '/' : `/branch/${pathName}`;
-    if (location.pathname !== targetPath) {
-      router(targetPath);
-    }
-  }, [branch, router])
+  // useEffect(() => {
+  //   try {
+  //     const targetPath = branch !== '/' ? `/branch/${branch}` : '/';
+  //     if (location.pathname !== targetPath) {
+  //       router(targetPath);
+  //     }
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }, [branch])
 
   return (
     <Routes>

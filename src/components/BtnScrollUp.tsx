@@ -106,7 +106,7 @@ function BtnScrollUp() {
 
   return (
     <Wrapper style={isScroll ? { display: 'flex' } : { display: 'none' }}>
-      {branch >= 0 && (
+      {branch !== '/' && (
         <Button
           className="hoverBtn"
           onClick={() => {
@@ -120,13 +120,13 @@ function BtnScrollUp() {
       <Button
         className="hoverBtn"
         onClick={() => {
-          branch < 0 ? handleScroll('home2') : handleScroll('menu6');
+          branch == '/' ? handleScroll('home2') : handleScroll('menu6');
         }}
       >
         <i className="fa fa-map-marker" aria-hidden="true" />
         <span>오시는길</span>
       </Button>
-      {branch >= 0 && priceInfo[branch].reservation && (
+      {branch !== '/' && priceInfo[branch].reservation && (
         <Button className="hoverBtn" onClick={() => handleOpenNewTab(priceInfo[branch].reservation)}>
           <i className="fa fa-calendar-check-o" aria-hidden="true" />
           <span>예약하기</span>
@@ -135,7 +135,6 @@ function BtnScrollUp() {
       <Button
         className="hoverBtn"
         onClick={() => {
-          setBranch(-1);
           router('/');
         }}
       >

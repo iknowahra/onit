@@ -158,7 +158,7 @@ function Header({ main, sub }: HeaderProps) {
 function Service() {
   const [branch, _] = useBranch();
   const [name, setName] = useState("");
-  const photos: string[][] = [[photo11, photo12, photo13], [photo21, photo22, photo23], [photo31, photo32, photo33], [photo41, photo42, photo43], [photo51, photo52, photo53]];
+  const photos: { [key: string]: string[] } = { "onedang": [photo11, photo12, photo13], "pyeongtaek": [photo21, photo22, photo23], "yeongdeungpo": [photo31, photo32, photo33], "wonju": [photo41, photo42, photo43], "daegu": [photo51, photo52, photo53] };
 
   useEffect(() => {
     const office = information[branch];
@@ -172,7 +172,7 @@ function Service() {
         <p>대면 | 비대면 계약 모두 가능하며 연중무휴 상담이 가능합니다</p>
       </Title>
       <Inner>
-        {serviceInfo[branch]?.map(({ main, sub }, index) => (
+        {serviceInfo[branch as keyof typeof serviceInfo]?.map(({ main, sub }, index) => (
           <Contents key={index} index={index}>
             <Header main={main} sub={sub} />
             <img src={photos[branch][index]} alt={main} />

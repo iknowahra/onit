@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import logo from "../../assets/logoWhite.png";
-import office1 from "../../assets/1/officeMain01.jpg";
-import office2 from "../../assets/2/officeMain01.jpg";
-import office3 from "../../assets/3/officeMain01.png";
-import office4 from "../../assets/4/officeLanding.jpg";
-import office5 from "../../assets/5/officeLanding.jpg";
+import office_onedang from "../../assets/1/officeMain01.jpg";
+import office_pyeongtaek from "../../assets/2/officeMain01.jpg";
+import office_yeongdeungpo from "../../assets/3/officeMain01.png";
+import office_wonju from "../../assets/4/officeLanding.jpg";
+import office_daegu from "../../assets/5/officeLanding.jpg";
 import { useBranch } from "../../contexts/BranchContext";
 import info, { iIntroDetail } from "../../assets/text/landing";
 
@@ -149,8 +149,17 @@ const ScrollDown = styled.a`
 function Landing() {
   const [branch, _] = useBranch();
   const [currBranch, setBranch] = useState<iIntroDetail>();
-  const photos = [office1, office2, office3, office4, office5]
-  const getBranchImg = () => <img src={photos[branch]} alt={"onitbranch"} />
+  const branchImages: Record<string, string> = {
+    onedang: office_onedang,
+    pyeongtaek: office_pyeongtaek,
+    yeongdeungpo: office_yeongdeungpo,
+    wonju: office_wonju,
+    daegu: office_daegu,
+  };
+
+  const getBranchImg = () => (
+    <img src={branchImages[branch]} alt="onitbranch" />
+  );
 
   const handleScroll = (id: number) => {
     const target = document.getElementById("menu" + id); // 대상 요소 찾기

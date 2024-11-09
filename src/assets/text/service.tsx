@@ -1,6 +1,6 @@
-const officeService = [
+const officeService = {
   // 원당
-  [
+  "onedang": [
     {
       main: '프리미엄 상주실',
       sub: '단독사용 5평 큰 면적 / 개별 냉난방\n공유오피스 유일 상주사무실',
@@ -15,7 +15,7 @@ const officeService = [
     }
   ],
   // 평택
-  [
+  "pyeongtaek": [
     {
       main: '비상주 주소지 임대서비스',
       sub: '최저가/10분내 전자계약 진행\n비과밀억제권역으로 세금 혜택',
@@ -30,7 +30,7 @@ const officeService = [
     }
   ],
   // 영등포
-  [
+  "yeongdeungpo": [
     {
       main: '넓은 개인공간 및 개별 냉난방',
       sub: '전기세 관리비 일체 무료\n 3중보안시스템(지문,cctv,개별 도어락)',
@@ -45,7 +45,7 @@ const officeService = [
     }
   ],
   // 원주점
-  [
+  "wonju": [
     {
       main: '프리미엄 상주실',
       sub: '단독사용 5평 큰 면적 / 개별 냉난방\n무료 유무선 인터넷, 24시보안 관리, 도어락출입관리',
@@ -59,8 +59,8 @@ const officeService = [
       sub: '관공서, 금융기관, 협회 등 실태조사 대응\n매일 우편물 도착 알림',
     }
   ],
-  // 칠곡점
-  [
+  // 대구점
+  "daegu": [
     {
       main: '사업 운영비용 절감',
       sub: `사무실 보증금, 비싼 임대료 절감\n신뢰할 수 있는 상업용 주소 제공`,
@@ -74,6 +74,6 @@ const officeService = [
       sub: '개인사업자 : 신규등록 | 주소이전\n법인사업자 : 법인설립 | 주소이전',
     },
   ],
-];
+};
 
 export default officeService;

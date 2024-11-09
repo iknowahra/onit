@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 
 import Subject from '../../components/Subject';
-import reviewInfo, { iReview } from '../../assets/text/review';
+import reviewInfo, { iReviewDetail } from '../../assets/text/review';
 import { useBranch } from '../../contexts/BranchContext';
 
 const Wrapper = styled.div`
@@ -124,7 +124,7 @@ const Tag = styled.span`
 
 function Review() {
   const [branch, _] = useBranch();
-  const [info, setInfo] = useState<iReview>();
+  const [info, setInfo] = useState<iReviewDetail>();
 
   useEffect(() => {
     setInfo(reviewInfo[branch]);

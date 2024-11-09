@@ -1,9 +1,8 @@
 import { createContext, ReactNode, useContext, useMemo, useState, Dispatch, SetStateAction, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import Landing from '../assets/text/landing';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 // 타입 정의
-type BranchContextType = [number, Dispatch<SetStateAction<number>>];
+type BranchContextType = [string, (newBranch: string) => void];
 
 // Context 생성 및 초기 값 설정
 const BranchContext = createContext<BranchContextType | undefined>(undefined);
@@ -13,23 +12,33 @@ interface BranchProviderProps {
 }
 
 function BranchProvider({ children }: BranchProviderProps) {
-    const location = useLocation().pathname.replace("/branch/", "");
-    const [branch, setBranch] = useState<number>(() => {
-        let branchInfo = Landing.branches.findIndex(({ path }) => path === location);
-        return branchInfo < 0 ? branchInfo : branchInfo - 1;
-    });
-
+    const location = useLocation().pathname.replace("/branch/", "") || '/';
+    const [branch, changeBranch] = useState<string>(location);
+    const router = useNavigate();
+    // location이 변경될 때만 branch를 업데이트하고, 
+    // Router.tsx의 useEffect는 제거하거나 수정해야 합니다
     useEffect(() => {
-        let branchInfo = Landing.branches.findIndex(({ path }) => path === location);
-        branchInfo = branchInfo < 0 ? branchInfo : branchInfo - 1;
-
-        // branch가 실제로 변경될 필요가 있을 때만 상태를 업데이트합니다.
-        if (branch !== branchInfo) {
-            setBranch(branchInfo);
+        try {
+            if (branch !== location) {
+                setBranch(location);
+            }
+        } catch (e) {
+            console.log(e);
         }
     }, [location]);
 
-    const value = useMemo<BranchContextType>(() => [branch, setBranch], [branch, setBranch]);
+    const setBranch = (newBranch: string) => {
+        changeBranch(newBranch);
+        if (newBranch != location) {
+            if (newBranch === '/') {
+                router('/');
+            } else {
+                router(`/branch/${newBranch}`);
+            }
+        }
+    }
+
+    const value = useMemo<BranchContextType>(() => [branch, setBranch], [branch]);
 
     return (
         <BranchContext.Provider value={value}>

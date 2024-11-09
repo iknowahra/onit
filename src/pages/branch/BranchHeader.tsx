@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import logo from "../../assets/logo.png";
 import { Dropdown } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import landingInfo from "../../assets/text/landing";
 import { useBranch } from "../../contexts/BranchContext";
 
@@ -144,10 +145,12 @@ function BranchHeader() {
     { name: "찾아오시는길" },
   ];
 
+  const router = useNavigate();
   const [isOpenModal, setOpenModal] = useState(false);
   const [branch, setBranch] = useBranch();
   const [isScroll, setScroll] = useState(false);
 
+  const branches = Object.keys(landingInfo.branches);
   const handleScroll = (id: number | string) => {
     const target = document.getElementById("menu" + id); // 대상 요소 찾기
     if (target) {
@@ -172,16 +175,16 @@ function BranchHeader() {
         <img src={logo} alt="ON!T Logo" onClick={() => handleScroll('Scroll')} />
         <Drop>
           <DropToggle variant="secondary" id="dropdown-basic">
-            {landingInfo.branches.find(({ value }) => value === branch)?.label}
+            {landingInfo.branches[branch].label}
           </DropToggle>
           <DropMenu>
-            {landingInfo.branches.map(({ label, value }) => (
+            {branches.map((path) => (
               <Dropdown.Item
-                onClick={() => setBranch(value)}
-                key={value}
-                style={{ color: value === branch ? "#F2722D" : "inherit" }}
+                onClick={() => setBranch(path)}
+                key={path}
+                style={{ color: path === branch ? "#F2722D" : "inherit" }}
               >
-                {label}
+                {landingInfo.branches[path].label}
               </Dropdown.Item>
             ))}
           </DropMenu>

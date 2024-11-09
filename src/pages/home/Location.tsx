@@ -6,7 +6,7 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 
 import { useBranch } from "../../contexts/BranchContext";
-import info, { iBranchInfo } from "../../assets/text/information";
+import info, { iBranchInfoDetail } from "../../assets/text/information";
 import Information from '../../components/Information'
 
 const Wrapper = styled.div`
@@ -60,22 +60,22 @@ const TabWrapper = styled.div`
 `;
 
 function Location() {
-  const [currBranch, setBranch] = useState<iBranchInfo>();
+  const [currBranch, setBranch] = useState<iBranchInfoDetail>(info['onedang']);
 
   return (
     <Wrapper id="home3">
       <Inner>
         <Subject
           main="지점안내"
-          sub="온잇 공유오피스는 현재 3개의 지점이 있습니다."
+          sub={`온잇 공유오피스는 현재 ${Object.keys(info).length}개의 지점이 있습니다.`}
         />
         <TabsWrapper
-          defaultActiveKey={info[0].path}
+          defaultActiveKey={'onedang'}
         >
-          {info.map((tab, idx) => (
-            <Tab key={idx} eventKey={tab.path} title={tab.alias}>
+          {Object.entries(info).map(([path, { alias }]) => (
+            <Tab key={path} eventKey={path} title={alias}>
               <TabWrapper>
-                <Information info={info[idx]} />
+                <Information info={info[path]} />
               </TabWrapper>
             </Tab>
           ))}

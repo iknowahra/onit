@@ -9,9 +9,11 @@ interface iOfficeInfo {
   contents: iOfficeContent[];
 }
 
-const officeInfo: iOfficeInfo[] = [
+type TOfficeInfo = Record<string, iOfficeInfo>;
+
+const officeInfo: TOfficeInfo = {
   // 원당
-  {
+  "onedang": {
     main: '비상주사무실 안내',
     sub: '원스톱 비상주 서비스(법무 / 세무 연결)',
     contents: [
@@ -32,7 +34,7 @@ const officeInfo: iOfficeInfo[] = [
     ],
   },
   // 평택점
-  {
+  "pyeongtaek": {
     main: '비상주사무실 안내',
     sub: '원스톱 비상주 서비스(법무 / 세무 연결)',
     contents: [
@@ -53,7 +55,7 @@ const officeInfo: iOfficeInfo[] = [
     ],
   },
   // 영등포 구청점
-  {
+  "yeongdeungpo": {
     main: '공유 사무실 안내',
     sub: '원스톱 비상주 서비스(법무 / 세무 연결)',
     contents: [
@@ -74,7 +76,7 @@ const officeInfo: iOfficeInfo[] = [
     ],
   },
   // 원주점
-  {
+  "wonju": {
     main: '비상주사무실 안내',
     sub: '원스톱 비상주 서비스(법무 / 세무 연결)',
     contents: [
@@ -94,8 +96,8 @@ const officeInfo: iOfficeInfo[] = [
       },
     ]
   },
-  // 칠곡점
-  {
+  // 대구점
+  "daegu": {
     main: '비상주사무실 안내',
     sub: '원스톱 비상주 서비스(법무 / 세무 연결)',
     contents: [
@@ -115,7 +117,7 @@ const officeInfo: iOfficeInfo[] = [
       },
     ]
   },
-];
+};
 
 export default officeInfo;
 export type { iOfficeInfo };

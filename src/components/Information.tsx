@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 
-import information, { iBranchInfo } from '../assets/text/information';
+import information, { iBranchInfoDetail } from '../assets/text/information';
 import { TransformWrapper, TransformComponent, ReactZoomPanPinchRef } from 'react-zoom-pan-pinch';
 
-import photo1 from '../assets/1/map.png';
-import photo2 from '../assets/2/map.png';
-import photo3 from '../assets/3/map.png';
-import photo4 from '../assets/4/map.png';
-import photo5 from '../assets/5/map.png';
+import photoOnedang from '../assets/1/map.png';
+import photoPyeongtaek from '../assets/2/map.png';
+import photoYeongdeungpo from '../assets/3/map.png';
+import photoWonju from '../assets/4/map.png';
+import photoDaegu from '../assets/5/map.png';
 import { useBranch } from '../contexts/BranchContext';
 
 const ImgWrapper = styled.div`
   width: 100%;
-  height: 25rem;
+  height: 30rem;
   margin: auto;
   overflow: hidden;
   cursor: pointer;
@@ -190,7 +190,7 @@ const Contents = styled.div`
 `;
 
 type Props = {
-  info?: iBranchInfo;
+  info?: iBranchInfoDetail;
 };
 
 const icons = {
@@ -219,9 +219,15 @@ const icons = {
 };
 
 function Information({ info }: Props) {
-  const photos = [photo1, photo2, photo3, photo4, photo5];
-  const [currPhoto, setPhoto] = useState(photos[0]);
+  const branchImages: Record<string, string> = {
+    onedang: photoOnedang,
+    pyeongtaek: photoPyeongtaek,
+    yeongdeungpo: photoYeongdeungpo,
+    wonju: photoWonju,
+    daegu: photoDaegu,
+  };
   const [branch, _] = useBranch();
+  const [currPhoto, setPhoto] = useState<string>();
 
   const handleOpenNewTab = (url: string | undefined) => {
     window.open(url, '_blank', 'noopener, noreferrer');
@@ -234,11 +240,10 @@ function Information({ info }: Props) {
       }
     }
   };
-
   useEffect(() => {
-    const idx = information.findIndex((branch) => branch.path == info?.path);
-    idx >= 0 ? setPhoto(photos[idx]) : setPhoto(photos[0]);
-  }, [info?.path]);
+    const path = info?.path || 'onedang';
+    branch !== '/' ? setPhoto(branchImages[branch]) : setPhoto(branchImages[path])
+  }, [info?.path, branch]);
 
   return (
     <>

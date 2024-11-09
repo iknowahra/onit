@@ -16,7 +16,7 @@ import Footer from '../components/Footer';
 import { useBranch } from '../contexts/BranchContext';
 import information from '../assets/text/information';
 import { useNavigate } from 'react-router-dom';
-import reviewInfo, { iReview } from '../assets/text/review';
+import reviewInfo, { iReviewDetail } from '../assets/text/review';
 
 const Container = styled.div`
   width: 100%;
@@ -42,7 +42,7 @@ function Branch() {
   const POPUP_CLOSE_EXPIRE_TIME = 24 * 60 * 60 * 1000;
 
   const [isOpen, setOpen] = useState(true);
-  const [info, setInfo] = useState<iReview>();
+  const [info, setInfo] = useState<iReviewDetail>();
   const router = useNavigate();
   const [branch, _] = useBranch();
 
@@ -54,9 +54,8 @@ function Branch() {
 
   const checkPopupOpen = () => {
     const now = new Date().getTime();
-    const expiredTime = localStorage.getItem("" + branch) || "-1";
-    console.log("ddd", parseInt(expiredTime) < now, information[branch].event)
-    return parseInt(expiredTime) < now && information[branch].event;
+    const expiredTime = parseInt(localStorage.getItem("" + branch) || "0");
+    return expiredTime < now && information[branch]?.event;
   }
 
   const setStorage = () => {
@@ -68,21 +67,21 @@ function Branch() {
   useEffect(() => { setOpen(checkPopupOpen()) }, [])
 
   useEffect(() => {
-    if (branch < 0) router("/")
-    if (branch >= 0 && information[branch].event) {
-      setOpen(checkPopupOpen());
+    if (branch !== '/') {
+      information[branch]?.event && setOpen(checkPopupOpen());
       setInfo(reviewInfo[branch]);
+      return;
     }
-
+    router("/")
   }, [branch])
 
   const modalTitle = () => {
     const info = information[branch];
-    if (branch >= 0) return (info ? info.name : "") + " 할인 이벤트"
+    if (branch !== '/') return (info ? info.name : "") + " 할인 이벤트"
     return "";
   }
 
-
+  if (branch === '/') return <></>;
   return (
     <Container id='branch'>
       <EventModal title={modalTitle()} isOpen={isOpen} handleModal={handleModal} />
@@ -100,6 +99,7 @@ function Branch() {
       </Inner>
     </Container>
   );
+
 }
 
 export default Branch;
