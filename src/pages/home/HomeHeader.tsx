@@ -176,7 +176,7 @@ function Header() {
           <DropMenu>
             {Object.entries(landingInfo.branches).map(([value, { label }]) => (
               <Dropdown.Item
-                onClick={() => router(value !== '/' ? `/branch/${value}` : value)}
+                onClick={() => setBranch(value)}
                 key={value}
                 style={{ color: value === branch ? "#F2722D" : "inherit" }}
               >
