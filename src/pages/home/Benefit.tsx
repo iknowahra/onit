@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Fit from '../../assets/text/benefit';
 
 import Card from 'react-bootstrap/Card';
-import photo from '../../assets/vision2.jpg';
+import photo from '../../assets/vision2.webp';
 import BranchDrop from '../../components/BranchDrop';
 
 const Container = styled.div`

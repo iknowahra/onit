@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.webp";
 import { Dropdown } from "react-bootstrap";
 import landingInfo from "../../assets/text/landing";
 import { useBranch } from "../../contexts/BranchContext";
@@ -171,10 +171,10 @@ function Header() {
         <img src={logo} alt="ON!T Logo" onClick={() => handleScroll(0)} />
         <Drop>
           <DropToggle variant="secondary" id="dropdown-basic">
-            {landingInfo.branches[branch].label}
+            {landingInfo.intro[branch].label}
           </DropToggle>
           <DropMenu>
-            {Object.entries(landingInfo.branches).map(([value, { label }]) => (
+            {Object.entries(landingInfo.intro).map(([value, { label }]) => (
               <Dropdown.Item
                 onClick={() => setBranch(value)}
                 key={value}

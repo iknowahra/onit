@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import OnitLogo from '../assets/logo.png';
+import OnitLogo from '../assets/logo.webp';
 import landingInfo from '../assets/text/landing';
 
 import { useBranch } from '../contexts/BranchContext';

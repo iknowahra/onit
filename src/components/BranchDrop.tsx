@@ -27,11 +27,11 @@ const DropMenu = styled(Dropdown.Menu)`
 function BranchDrop() {
     const router = useNavigate();
     const [branch, setBranch] = useBranch();
-    const branches = Object.keys(landingInfo.branches);
+    const branches = Object.keys(landingInfo.intro);
     return (
         <Drop>
             <DropToggle variant="secondary" id="dropdown-basic">
-                {landingInfo.branches[branch].label}
+                {landingInfo.intro[branch].label}
             </DropToggle>
             <DropMenu>
                 {branches.map((path) => (
@@ -44,7 +44,7 @@ function BranchDrop() {
                             cursor: path == '/' ? "not-allowed" : "pointer",
                         }}
                     >
-                        {landingInfo.branches[path].label}
+                        {landingInfo.intro[path].label}
                     </Dropdown.Item>
                 ))}
             </DropMenu>

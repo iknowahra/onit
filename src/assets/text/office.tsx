@@ -117,6 +117,27 @@ const officeInfo: TOfficeInfo = {
       },
     ]
   },
+  // 안양점
+  "anyang": {
+    main: '비상주사무실 안내',
+    sub: '원스톱 비상주 서비스(법무 / 세무 연결)',
+    contents: [
+      {
+        title: '비상주 사무실',
+        details: `실사지원 \n우편 등기 대리수령 및 문자알람`,
+      },
+      {
+        title: '역세권',
+        details:
+          '안양역 도보 5분거리',
+      },
+      {
+        title: '사업장 주소 등록 단 10분',
+        details:
+          '개인사업자 : 신규등록 | 주소이전\n법인사업자 : 법인설립 | 주소이전',
+      },
+    ]
+  },
 };
 
 export default officeInfo;

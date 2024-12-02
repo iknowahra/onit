@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.webp";
 import { Dropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import landingInfo from "../../assets/text/landing";
@@ -150,7 +150,7 @@ function BranchHeader() {
   const [branch, setBranch] = useBranch();
   const [isScroll, setScroll] = useState(false);
 
-  const branches = Object.keys(landingInfo.branches);
+  const branches = Object.keys(landingInfo.intro);
   const handleScroll = (id: number | string) => {
     const target = document.getElementById("menu" + id); // 대상 요소 찾기
     if (target) {
@@ -159,6 +159,7 @@ function BranchHeader() {
   };
 
   useEffect(() => {
+    console.log("branch", branch);
     const effectFn = () => {
       window.scrollY === 0 ? setScroll(false) : setScroll(true);
     }
@@ -175,7 +176,7 @@ function BranchHeader() {
         <img src={logo} alt="ON!T Logo" onClick={() => handleScroll('Scroll')} />
         <Drop>
           <DropToggle variant="secondary" id="dropdown-basic">
-            {landingInfo.branches[branch].label}
+            {landingInfo.intro[branch].label}
           </DropToggle>
           <DropMenu>
             {branches.map((path) => (
@@ -184,7 +185,7 @@ function BranchHeader() {
                 key={path}
                 style={{ color: path === branch ? "#F2722D" : "inherit" }}
               >
-                {landingInfo.branches[path].label}
+                {landingInfo.intro[path].label}
               </Dropdown.Item>
             ))}
           </DropMenu>

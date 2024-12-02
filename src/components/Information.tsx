@@ -4,11 +4,12 @@ import { useEffect, useState } from 'react';
 import information, { iBranchInfoDetail } from '../assets/text/information';
 import { TransformWrapper, TransformComponent, ReactZoomPanPinchRef } from 'react-zoom-pan-pinch';
 
-import photoOnedang from '../assets/1/map.png';
-import photoPyeongtaek from '../assets/2/map.png';
-import photoYeongdeungpo from '../assets/3/map.png';
-import photoWonju from '../assets/4/map.png';
-import photoDaegu from '../assets/5/map.png';
+import photoOnedang from '../assets/1/map.webp';
+import photoPyeongtaek from '../assets/2/map.webp';
+import photoYeongdeungpo from '../assets/3/map.webp';
+import photoWonju from '../assets/4/map.webp';
+import photoDaegu from '../assets/5/map.webp';
+import photoAnyang from '../assets/7/anyang_map.webp';
 import { useBranch } from '../contexts/BranchContext';
 
 const ImgWrapper = styled.div`
@@ -202,6 +203,14 @@ const icons = {
       <span className="caption">주차가능</span>
     </span>
   ),
+  robotPark: () => (
+    <span>
+      <span>
+        <i className="fa fa-car" aria-hidden="true"></i>P
+      </span>
+      <span className="caption">기계식주차가능</span>
+    </span>
+  ),
   separateToilet: () => (
     <span>
       <span>
@@ -225,6 +234,7 @@ function Information({ info }: Props) {
     yeongdeungpo: photoYeongdeungpo,
     wonju: photoWonju,
     daegu: photoDaegu,
+    anyang: photoAnyang
   };
   const [branch, _] = useBranch();
   const [currPhoto, setPhoto] = useState<string>();
@@ -284,12 +294,21 @@ function Information({ info }: Props) {
             {info?.tel && <a href={'tel:' + info?.tel.replace(/\D/g, '')}>{info?.tel}</a>}
           </span>
         </div>
+        {info?.blog && <div className="blog">
+          <span className="header">
+            <i className="fa fa-id-card" aria-hidden="true"></i>블로그
+          </span>
+          <span className="content">
+            <a href={info?.blog} target="_blank" rel="noopener noreferrer">{info?.blog}</a>
+          </span>
+        </div>}
         <div className="service">
           <span className="header">
             <i className="fa fa-info-circle" aria-hidden="true"></i>이용안내
           </span>
           <span className="content">
             {info?.service?.park && icons.park()}
+            {info?.service?.robotPark && icons.robotPark()}
             {info?.service?.wifi && icons.wifi()}
             {info?.service?.genderSeparateToilet && icons.separateToilet()}
           </span>

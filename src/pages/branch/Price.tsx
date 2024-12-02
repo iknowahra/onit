@@ -6,56 +6,61 @@ import Subject from '../../components/Subject';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
-import officePhoto11 from '../../assets/1/officeMain03.jpg';
-import officePhoto12 from '../../assets/1/officeMain02.jpg';
-import officePhoto13 from '../../assets/1/officeMain01.jpg';
-import officePhoto14 from '../../assets/1/officeMain05.jpg';
+import officePhoto11 from '../../assets/1/officeMain03.webp';
+import officePhoto12 from '../../assets/1/officeMain02.webp';
+import officePhoto13 from '../../assets/1/officeMain01.webp';
+import officePhoto14 from '../../assets/1/officeMain05.webp';
 
-import officePhoto21 from '../../assets/2/officeMain02.jpg';
-import officePhoto22 from '../../assets/2/officeMain02.jpg';
-import officePhoto23 from '../../assets/2/officeMain02.jpg';
-import officePhoto24 from '../../assets/2/printer.jpg';
+import officePhoto21 from '../../assets/2/officeMain02.webp';
+import officePhoto22 from '../../assets/2/officeMain02.webp';
+import officePhoto23 from '../../assets/2/officeMain02.webp';
+import officePhoto24 from '../../assets/2/printer.webp';
 
-import officePhoto31 from '../../assets/3/officeblock01.jpeg';
-import officePhoto32 from '../../assets/3/office06.jpg';
-import officePhoto33 from '../../assets/3/officeblock02.jpg';
-import officePhoto34 from '../../assets/3/office08.jpg';
+import officePhoto31 from '../../assets/3/officeblock01.webp';
+import officePhoto32 from '../../assets/3/office06.webp';
+import officePhoto33 from '../../assets/3/officeblock02.webp';
+import officePhoto34 from '../../assets/3/office08.webp';
 
 // 비상주 사무실
-import officePhoto41 from '../../assets/4/officeMain01.jpg'; // 6개월
-import officePhoto42 from '../../assets/4/nonOffice1yr.jpeg'; // 1년
-import officePhoto43 from '../../assets/4/nonOffice2yr.jpeg'; // 2년
+import officePhoto41 from '../../assets/4/nonOffice1yr.webp'; // 6개월
+import officePhoto42 from '../../assets/4/nonOffice1yr.webp'; // 1년
+import officePhoto43 from '../../assets/4/nonOffice2yr.webp'; // 2년
 
-import officePhoto51 from '../../assets/5/chilgok_price2.png'; // 6개월
-import officePhoto52 from '../../assets/5/chilgok_price3.png'; // 1년
-import officePhoto53 from '../../assets/5/chilgok_price4.png'; // 2년
+import officePhoto51 from '../../assets/5/chilgok_price2.webp'; // 6개월
+import officePhoto52 from '../../assets/5/chilgok_price3.webp'; // 1년
+import officePhoto53 from '../../assets/5/chilgok_price4.webp'; // 2년
 
-
-
-import studyPhoto11 from '../../assets/1/studyMain01.jpg';
-import studyPhoto12 from '../../assets/1/studyMain02.jpg';
-import studyPhoto13 from '../../assets/1/studyMain03.jpg';
-
-import studyPhoto21 from '../../assets/2/multiroom.jpeg';
-import studyPhoto22 from '../../assets/2/openroom.jpeg';
-import studyPhoto23 from '../../assets/2/studyformen.jpeg';
-import studyPhoto24 from '../../assets/2/womenforone.jpg';
-import studyPhoto25 from '../../assets/2/studyforwomen.jpg';
-import studyPhoto26 from '../../assets/2/study2people2.jpg';
-import studyPhoto27 from '../../assets/2/study2people4.jpg';
-import studyPhoto28 from '../../assets/2/womenforone2.jpg';
+import officePhoto71 from '../../assets/7/anyang_office.webp'; // 상주
+import officePhoto72 from '../../assets/7/anyang_laptop.webp'; // 비상주
+import officePhoto73 from '../../assets/7/anyang_meeting.webp'; // 회의실
+import officePhoto74 from '../../assets/7/anyang_printer.webp'; // 프린터
 
 
-import studyPhoto31 from '../../assets/3/office09.jpg';
+
+import studyPhoto11 from '../../assets/1/studyMain01.webp';
+import studyPhoto12 from '../../assets/1/studyMain02.webp';
+import studyPhoto13 from '../../assets/1/studyMain03.webp';
+
+import studyPhoto21 from '../../assets/2/multiroom.webp';
+import studyPhoto22 from '../../assets/2/openroom.webp';
+import studyPhoto23 from '../../assets/2/studyformen.webp';
+import studyPhoto24 from '../../assets/2/womenforone.webp';
+import studyPhoto25 from '../../assets/2/studyforwomen.webp';
+import studyPhoto26 from '../../assets/2/study2people2.webp';
+import studyPhoto27 from '../../assets/2/study2people4.webp';
+import studyPhoto28 from '../../assets/2/womenforone2.webp';
+
+
+import studyPhoto31 from '../../assets/3/office09.webp';
 
 
 // 상주 사무실
-import studyPhoto41 from '../../assets/4/officeForTwo.jpg';   // 2인
-import studyPhoto42 from '../../assets/4/officeForThree.jpg'; // 3인
-import studyPhoto43 from '../../assets/4/printer.jpeg';  // 프린터
+import studyPhoto41 from '../../assets/4/officeForTwo.webp';   // 2인
+import studyPhoto42 from '../../assets/4/officeForThree.webp'; // 3인
+import studyPhoto43 from '../../assets/4/printer.webp';  // 프린터
 
 // 칠곡 상주 사무실
-import studyPhoto51 from '../../assets/5/chilgok_price1.png'; // 준비중
+import studyPhoto51 from '../../assets/5/chilgok_price1.webp'; // 준비중
 
 
 
@@ -231,8 +236,21 @@ function Price() {
   const [branch, _] = useBranch();
   const [currBranch, setBranch] = useState<iPriceDetail>();
   const [defaultKey, setKey] = useState('office');
-  const officePhotos: { [key: string]: string[] } = { "onedang": [officePhoto11, officePhoto12, officePhoto13, officePhoto14], "pyeongtaek": [officePhoto21, officePhoto22, officePhoto23, officePhoto24], "yeongdeungpo": [officePhoto31, officePhoto32, officePhoto33, officePhoto34], "wonju": [officePhoto41, officePhoto42, officePhoto43, officePhoto43], "daegu": [officePhoto51, officePhoto52, officePhoto53] };
-  const studyPhotos: { [key: string]: string[] } = { "onedang": [studyPhoto11, studyPhoto12, studyPhoto13], "pyeongtaek": [studyPhoto21, studyPhoto21, studyPhoto22, studyPhoto22, studyPhoto22, studyPhoto22,], "yeongdeungpo": [studyPhoto31, studyPhoto31, studyPhoto31, studyPhoto31], "wonju": [studyPhoto41, studyPhoto42, studyPhoto43], "daegu": [studyPhoto51] };
+  const officePhotos: { [key: string]: string[] } = {
+    "onedang": [officePhoto11, officePhoto12, officePhoto13, officePhoto14],
+    "pyeongtaek": [officePhoto21, officePhoto22, officePhoto23, officePhoto24],
+    "yeongdeungpo": [officePhoto31, officePhoto32, officePhoto33, officePhoto34],
+    "wonju": [officePhoto41, officePhoto42, officePhoto43],
+    "daegu": [officePhoto51, officePhoto52, officePhoto53],
+    "anyang": [officePhoto71, officePhoto72, officePhoto73, officePhoto74]
+  };
+  const studyPhotos: { [key: string]: string[] } = {
+    "onedang": [studyPhoto11, studyPhoto12, studyPhoto13],
+    "pyeongtaek": [studyPhoto21, studyPhoto21, studyPhoto22, studyPhoto22, studyPhoto22, studyPhoto22],
+    "yeongdeungpo": [studyPhoto31, studyPhoto31, studyPhoto31, studyPhoto31],
+    "wonju": [studyPhoto41, studyPhoto42, studyPhoto43],
+    "daegu": [studyPhoto51]
+  };
 
 
   const otherPhotos = [
@@ -262,40 +280,22 @@ function Price() {
         <TabsWrapper defaultActiveKey={"office"} activeKey={defaultKey}
           onSelect={handleSelect}>
           {branch !== "/" && currBranch?.tab?.map((tab, idx) => (
-            <Tab key={idx} eventKey={tab.category} title={tab.title}>
+            <Tab key={tab.title} eventKey={tab.category} title={tab.title}>
               <TabWrapper>
                 {tab.price.map((item, itemIdx) => (
-                  <RightInner key={itemIdx}>
+                  <RightInner key={tab.title + itemIdx}>
                     <RightImage>
-                      {tab?.category === 'office' && <img src={officePhotos[branch][itemIdx]} alt={tab.category} />}
-                      {tab?.category.includes('study') && <img src={studyPhotos[branch][itemIdx]} alt={tab.category} />}
+                      {tab?.category === 'office' && <img src={officePhotos[branch]?.[itemIdx]} alt={tab.category} />}
+                      {tab?.category.includes('study') && <img src={studyPhotos[branch]?.[itemIdx]} alt={tab.category} />}
                       {tab?.category.includes('other') && <img src={otherPhotos[tab.category.length - 'other'.length][itemIdx]} alt={tab.category} />}
 
                       {item.badge && <Badge content={item.badge}>{item.badge.toUpperCase()}</Badge>}
                     </RightImage>
                     <div className="title">{item.title}</div>
                     <Detail>{item.detail}</Detail>
-                    {item.discount ? (
-                      <>
-                        <div className="price" style={{ fontWeight: 'bolder' }}>
-                          {item.discount}
-                        </div>
-                        <div
-                          style={{
-                            fontSize: '0.7rem',
-                            color: '#F2722D',
-                            lineHeight: '1rem',
-                            margin: '0 1rem',
-                          }}
-                        >
-                          (정가 : {item.price})
-                        </div>
-                      </>
-                    ) : (
-                      <div className="price" style={{ fontWeight: 'bolder' }}>
-                        {item.price}
-                      </div>
-                    )}
+                    <div className="price" style={{ fontWeight: 'bolder', color: '#F2722D', }}>
+                      {item.price}
+                    </div>
                   </RightInner>
                 ))}
               </TabWrapper>

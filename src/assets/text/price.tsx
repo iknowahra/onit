@@ -33,8 +33,7 @@ const priceInfo: iPrice = {
             badge: 'Best',
             title: '상주사무실(3인) 1개월',
             detail: '넓은 공간(5평), 개별 냉난방, 공용 복합기',
-            price: "500,000원",
-            discount: "440,000원(VAT포함)"
+            price: "440,000원(VAT포함)"
           },
           {
 
@@ -397,6 +396,41 @@ const priceInfo: iPrice = {
             title: '상주사무실 준비중',
             detail: '쾌적한 사무실 준비중',
             price: "미정(오픈전)",
+          },
+        ],
+      },
+    ]
+  },
+  anyang: {
+    subject: '경기 안양역점 이용가격 안내',
+    detail: "성공적인 비즈니스를 위한 비상주 사무실",
+    reservation: "",
+    tab: [
+      {
+        category: "office",
+        title: '비상주|상주 사무실',
+        price: [
+          {
+            badge: 'best',
+            title: '상주 1인실 내측(1개월)',
+            detail: '쾌적한인테리어,시디즈의자',
+            price: "15만원~(VAT별도)"
+          },
+          {
+            badge: '추천⭐️',
+            title: '비상주 사무실 12개월',
+            detail: 'VAT 별도',
+            price: "개인2만원,법인3만원"
+          },
+          {
+            title: '입주사 회의실',
+            detail: '6인실 회의실',
+            price: "무료 사용"
+          },
+          {
+            title: '공용 컴퓨터 & 복합기',
+            detail: '무료 사용',
+            price: "무료 제공"
           },
         ],
       },

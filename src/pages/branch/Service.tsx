@@ -5,25 +5,29 @@ import { useBranch } from "../../contexts/BranchContext";
 import serviceInfo from "../../assets/text/service";
 import information from "../../assets/text/information";
 
-import photo11 from "../../assets/1/officeMain03.jpg";
-import photo12 from "../../assets/1/officeMain01.jpg";
-import photo13 from "../../assets/1/officeMain04.jpg";
+import photo11 from "../../assets/1/officeMain03.webp";
+import photo12 from "../../assets/1/officeMain01.webp";
+import photo13 from "../../assets/1/officeMain04.webp";
 
-import photo21 from "../../assets/2/studyformen.jpg";
-import photo22 from "../../assets/2/officeMain01.jpg";
-import photo23 from "../../assets/2/officeMain02.jpg";
+import photo21 from "../../assets/2/studyformen.webp";
+import photo22 from "../../assets/2/pt_main01.webp";
+import photo23 from "../../assets/2/officeMain02.webp";
 
-import photo31 from '../../assets/3/office07.jpg';
-import photo32 from '../../assets/3/printer.jpg';
-import photo33 from '../../assets/3/share.jpg';
+import photo31 from '../../assets/3/office07.webp';
+import photo32 from '../../assets/3/printer.webp';
+import photo33 from '../../assets/3/share.webp';
 
-import photo41 from '../../assets/4/office05.jpg';
-import photo42 from '../../assets/4/office11.jpg';
-import photo43 from '../../assets/4/office18.jpg';
+import photo41 from '../../assets/4/office05.webp';
+import photo42 from '../../assets/4/office11.webp';
+import photo43 from '../../assets/4/office18.webp';
 
-import photo51 from '../../assets/5/chilgok-op1.jpg';
-import photo52 from '../../assets/5/chilgok-op2.jpg';
-import photo53 from '../../assets/5/chilgok-op3.jpg';
+import photo51 from '../../assets/5/chilgok-op1.webp';
+import photo52 from '../../assets/5/chilgok-op2.webp';
+import photo53 from '../../assets/5/chilgok-op3.webp';
+
+import photo71 from '../../assets/vision1.webp';
+import photo72 from '../../assets/vision2.webp';
+import photo73 from '../../assets/vision3.webp';
 
 
 
@@ -158,7 +162,14 @@ function Header({ main, sub }: HeaderProps) {
 function Service() {
   const [branch, _] = useBranch();
   const [name, setName] = useState("");
-  const photos: { [key: string]: string[] } = { "onedang": [photo11, photo12, photo13], "pyeongtaek": [photo21, photo22, photo23], "yeongdeungpo": [photo31, photo32, photo33], "wonju": [photo41, photo42, photo43], "daegu": [photo51, photo52, photo53] };
+  const photos: { [key: string]: string[] } = {
+    "onedang": [photo11, photo12, photo13],
+    "pyeongtaek": [photo21, photo22, photo23],
+    "yeongdeungpo": [photo31, photo32, photo33],
+    "wonju": [photo41, photo42, photo43],
+    "daegu": [photo51, photo52, photo53],
+    "anyang": [photo71, photo72, photo73]
+  };
 
   useEffect(() => {
     const office = information[branch];

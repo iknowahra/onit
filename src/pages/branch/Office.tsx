@@ -5,10 +5,10 @@ import Card from 'react-bootstrap/Card';
 import Subject from '../../components/Subject';
 import officeInfo, { iOfficeInfo } from '../../assets/text/office';
 
-import photo1 from '../../assets/1/service01.png';
-import photo2 from '../../assets/1/service02.png';
-import photo3 from '../../assets/1/service03.png';
-import photo4 from '../../assets/3/5min.png'
+import photo1 from '../../assets/1/service01.webp';
+import photo2 from '../../assets/1/service02.webp';
+import photo3 from '../../assets/1/service03.webp';
+import photo4 from '../../assets/3/5min.webp'
 import { useBranch } from '../../contexts/BranchContext';
 
 interface iCard {
@@ -92,7 +92,14 @@ const SliderSlap = styled.div`
 `;
 
 function PhotoCard(content: iCard, branch: string, index: number) {
-  const photos: { [key: string]: string[] } = { "onedang": [photo1, photo2, photo3], "pyeongtaek": [photo1, photo2, photo3], "yeongdeungpo": [photo1, photo2, photo4], "wonju": [photo1, photo2, photo3], "daegu": [photo1, photo2, photo3] };
+  const photos: { [key: string]: string[] } = {
+    "onedang": [photo1, photo2, photo3],
+    "pyeongtaek": [photo1, photo2, photo3],
+    "yeongdeungpo": [photo1, photo2, photo4],
+    "wonju": [photo1, photo2, photo3],
+    "daegu": [photo1, photo2, photo3],
+    "anyang": [photo1, photo4, photo3]
+  };
 
   return (
     < CardStyle key={index} >

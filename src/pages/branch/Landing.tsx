@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import logo from "../../assets/logoWhite.png";
-import office_onedang from "../../assets/1/officeMain01.jpg";
-import office_pyeongtaek from "../../assets/2/officeMain01.jpg";
-import office_yeongdeungpo from "../../assets/3/officeMain01.png";
-import office_wonju from "../../assets/4/officeLanding.jpg";
-import office_daegu from "../../assets/5/officeLanding.jpg";
+import logo from "../../assets/logoWhite.webp";
+import office_onedang from "../../assets/1/officeMain01.webp";
+import office_pyeongtaek from "../../assets/2/pt_main01.webp";
+import office_yeongdeungpo from "../../assets/3/officeMain01.webp";
+import office_wonju from "../../assets/4/wj_main01.webp";
+import office_daegu from "../../assets/5/officeLanding.webp";
+import office_anyang from "../../assets/7/anyang_main.webp";
+
 import { useBranch } from "../../contexts/BranchContext";
 import info, { iIntroDetail } from "../../assets/text/landing";
 
 const Wrapper = styled.div`
+  width: 100vw;
   height: 100vh;
   background-color: ${({ theme }) => theme.color.sub};
   @media (max-width: 780px) {
@@ -155,11 +158,14 @@ function Landing() {
     yeongdeungpo: office_yeongdeungpo,
     wonju: office_wonju,
     daegu: office_daegu,
+    anyang: office_anyang,
   };
 
-  const getBranchImg = () => (
-    <img src={branchImages[branch]} alt="onitbranch" />
-  );
+  const getBranchImg = () => {
+    console.log('Current branch:', branch);
+    console.log('Image path:', branchImages[branch]);
+    return branchImages[branch] ? <img src={branchImages[branch]} alt="onit branch" /> : <></>
+  };
 
   const handleScroll = (id: number) => {
     const target = document.getElementById("menu" + id); // 대상 요소 찾기
@@ -173,12 +179,13 @@ function Landing() {
   };
 
   useEffect(() => {
+    console.log(branch);
     setBranch(info.intro[branch]);
   }, [branch]);
 
 
   return (
-    <Wrapper id="menu0">
+    <Wrapper id="menu0" key={branch}>
       <ImageWrapper>
         {getBranchImg()}
       </ImageWrapper>

@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import BranchDrop from '../../components/BranchDrop';
 
-import photo1 from '../../assets/slide-welcome-01.jpg';
-import photo2 from '../../assets/slide-welcome-02.jpg';
-import photo3 from '../../assets/slide-welcome-03.jpg';
-import office from '../../assets/valueup.jpg';
+import photo1 from '../../assets/slide-welcome-01.webp';
+import photo2 from '../../assets/slide-welcome-02.webp';
+import photo3 from '../../assets/slide-welcome-03.webp';
+import office from '../../assets/valueup.webp';
 
 import Eng from '../../assets/text/landing';
 import Fit from '../../assets/text/benefit';

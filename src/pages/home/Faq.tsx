@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Subject from "../../components/Subject";
-import photo from "../../assets/faq.png";
+import photo from "../../assets/faq.webp";
 import fagInfo, { iFaqItem } from "../../assets/text/faq";
 import { useBranch } from "../../contexts/BranchContext";
 

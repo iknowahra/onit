@@ -46,7 +46,6 @@ function Branch() {
   const router = useNavigate();
   const [branch, _] = useBranch();
 
-
   const handleModal = (open: boolean, desireClose: boolean) => {
     if (desireClose && !open) setStorage();
     setOpen(open);
@@ -77,7 +76,7 @@ function Branch() {
 
   const modalTitle = () => {
     const info = information[branch];
-    if (branch !== '/') return (info ? info.name : "") + " 할인 이벤트"
+    if (branch !== '/') return (info ? info.name : "") + " 이벤트"
     return "";
   }
 

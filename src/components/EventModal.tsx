@@ -2,11 +2,12 @@ import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { useBranch } from "../contexts/BranchContext";
-import eventOnedang from "../assets/1/event.jpeg";
-import eventPyeongtaek from "../assets/2/event.jpeg";
-import eventYeongdeungpo from "../assets/3/event.jpg";
-import eventWonju from "../assets/4/logo.png";
-import eventDaegu from "../assets/5/chilgok_event.png";
+import eventOnedang from "../assets/1/event.webp";
+import eventPyeongtaek from "../assets/2/event.webp";
+import eventYeongdeungpo from "../assets/3/event.webp";
+import eventWonju from "../assets/4/logo.webp";
+import eventDaegu from "../assets/5/chilgok_event.webp";
+import eventAnyang from "../assets/7/anyang_event.webp";
 import styled from "styled-components";
 
 interface Props {
@@ -45,7 +46,8 @@ function EventModal({ title, isOpen, handleModal }: Props) {
     pyeongtaek: eventPyeongtaek,
     yeongdeungpo: eventYeongdeungpo,
     wonju: eventWonju,
-    daegu: eventDaegu
+    daegu: eventDaegu,
+    anyang: eventAnyang
   };
   const closeModal = (open: boolean, close24: boolean) => {
     handleModal(open, close24);

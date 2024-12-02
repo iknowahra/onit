@@ -136,6 +136,12 @@ const review: iReview = {
     subTitle: '대구 칠곡점 ',
     contents: [],
   },
+  'anyang': {
+    main: '사용자들의 생생 리뷰',
+    sub: '온잇 공유오피스',
+    subTitle: '경기 안양역점 ',
+    contents: [],
+  },
 };
 export default review;
 export type { iReview, iReviewDetail };

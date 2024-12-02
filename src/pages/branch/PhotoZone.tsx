@@ -1,60 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import _ from "lodash";
 
 import Slider from "react-slick";
 import Modal from "../../components/Modal";
 
-import officePhoto11 from "../../assets/1/officeMain01.jpg";
-import officePhoto12 from "../../assets/1/officeMain03.jpg";
-import officePhoto13 from "../../assets/1/officeMain04.jpg";
-import officePhoto14 from "../../assets/1/officeMain05.jpg";
-import officePhoto15 from "../../assets/1/officeMain06.jpg";
-import officePhoto16 from "../../assets/1/officeMain07.jpg";
-import officePhoto17 from "../../assets/1/officeMain08.jpg";
-import officePhoto18 from "../../assets/1/officeMain10.jpg";
-import officePhoto19 from "../../assets/1/officeMain12.jpg";
+import officePhoto11 from "../../assets/1/officeMain01.webp";
+import officePhoto12 from "../../assets/1/officeMain03.webp";
+import officePhoto13 from "../../assets/1/officeMain04.webp";
+import officePhoto14 from "../../assets/1/officeMain05.webp";
+import officePhoto15 from "../../assets/1/officeMain06.webp";
+import officePhoto16 from "../../assets/1/officeMain07.webp";
+import officePhoto17 from "../../assets/1/officeMain08.webp";
+import officePhoto18 from "../../assets/1/officeMain10.webp";
+import officePhoto19 from "../../assets/1/officeMain12.webp";
 
-import officePhoto21 from "../../assets/2/officeMain01.jpg";
-import officePhoto22 from "../../assets/2/entrance.jpg";
-import officePhoto23 from "../../assets/2/study2people2.jpg";
-import officePhoto24 from "../../assets/2/officeMain02.jpg";
-import officePhoto25 from "../../assets/2/kiosk.jpg";
-import officePhoto26 from "../../assets/2/printer.jpg";
-import officePhoto27 from "../../assets/2/cafeteria.jpg";
-import officePhoto28 from "../../assets/2/study2people1.jpg";
-import officePhoto29 from "../../assets/2/womenforone.jpg";
+import officePhoto21 from "../../assets/2/pt_main01.webp";
+import officePhoto22 from "../../assets/2/entrance.webp";
+import officePhoto23 from "../../assets/2/study2people2.webp";
+import officePhoto24 from "../../assets/2/officeMain02.webp";
+import officePhoto25 from "../../assets/2/kiosk.webp";
+import officePhoto26 from "../../assets/2/printer.webp";
+import officePhoto27 from "../../assets/2/cafeteria.webp";
+import officePhoto28 from "../../assets/2/study2people1.webp";
+import officePhoto29 from "../../assets/2/womenforone.webp";
 
-import officePhoto31 from "../../assets/3/office11.jpg";
-import officePhoto32 from "../../assets/3/office02.jpg";
-import officePhoto33 from "../../assets/3/office03.jpg";
-import officePhoto34 from "../../assets/3/office05.jpg";
-import officePhoto35 from "../../assets/3/office06.jpg";
-import officePhoto36 from "../../assets/3/office07.jpg";
-import officePhoto37 from "../../assets/3/office08.jpg";
-import officePhoto38 from "../../assets/3/officeblock01.jpeg";
-import officePhoto39 from "../../assets/3/cctv.jpg";
+import officePhoto31 from "../../assets/3/office11.webp";
+import officePhoto32 from "../../assets/3/office02.webp";
+import officePhoto33 from "../../assets/3/office03.webp";
+import officePhoto34 from "../../assets/3/office05.webp";
+import officePhoto35 from "../../assets/3/office06.webp";
+import officePhoto36 from "../../assets/3/office07.webp";
+import officePhoto37 from "../../assets/3/office08.webp";
+import officePhoto38 from "../../assets/3/officeblock01.webp";
+import officePhoto39 from "../../assets/3/cctv.webp";
 
-import officePhoto41 from "../../assets/4/office01.jpg";
-import officePhoto42 from "../../assets/4/office02.jpg";
-import officePhoto43 from "../../assets/4/office03.jpg";
-import officePhoto44 from "../../assets/4/office04.jpg";
-import officePhoto45 from "../../assets/4/office05.jpg";
-import officePhoto46 from "../../assets/4/office06.jpg";
-import officePhoto47 from "../../assets/4/office07.jpg";
-import officePhoto48 from "../../assets/4/office08.jpg";
-import officePhoto49 from "../../assets/4/office09.jpg";
-import officePhoto411 from "../../assets/4/office11.jpg";
-import officePhoto421 from "../../assets/4/office12.jpg";
-import officePhoto431 from "../../assets/4/office13.jpg";
-import officePhoto451 from "../../assets/4/office15.jpg";
-import officePhoto461 from "../../assets/4/office16.jpg";
-import officePhoto471 from "../../assets/4/office17.jpg";
-import officePhoto481 from "../../assets/4/office18.jpg";
-import officePhoto491 from "../../assets/4/office19.jpg";
-import officePhoto412 from "../../assets/4/common01.jpeg";
-import officePhoto422 from "../../assets/4/common02.jpeg";
-import officePhoto432 from "../../assets/4/common03.jpeg";
-import officePhoto442 from "../../assets/4/common04.jpeg";
+import officePhoto41 from "../../assets/4/office01.webp";
+import officePhoto42 from "../../assets/4/office02.webp";
+import officePhoto43 from "../../assets/4/office03.webp";
+import officePhoto44 from "../../assets/4/office04.webp";
+import officePhoto45 from "../../assets/4/office05.webp";
+import officePhoto46 from "../../assets/4/office06.webp";
+import officePhoto47 from "../../assets/4/office07.webp";
+import officePhoto48 from "../../assets/4/office08.webp";
+import officePhoto49 from "../../assets/4/office09.webp";
+import officePhoto411 from "../../assets/4/office11.webp";
+import officePhoto421 from "../../assets/4/office12.webp";
+import officePhoto431 from "../../assets/4/office13.webp";
+import officePhoto451 from "../../assets/4/office15.webp";
+import officePhoto461 from "../../assets/4/office16.webp";
+import officePhoto471 from "../../assets/4/office17.webp";
+import officePhoto481 from "../../assets/4/office18.webp";
+import officePhoto491 from "../../assets/4/office19.webp";
+import officePhoto412 from "../../assets/4/common01.webp";
+import officePhoto422 from "../../assets/4/common02.webp";
+import officePhoto432 from "../../assets/4/common03.webp";
+import officePhoto442 from "../../assets/4/common04.webp";
+
+import officePhoto71 from "../../assets/7/anyang_main01.webp";
 
 import { useBranch } from "../../contexts/BranchContext";
 import Subject from "../../components/Subject";
@@ -218,6 +221,8 @@ function PhotoZone() {
       officePhoto442,
     ], "daegu": [
 
+    ], "anyang": [
+      officePhoto71,
     ]
   };
   const handleModal = (open: boolean) => {
@@ -227,6 +232,16 @@ function PhotoZone() {
   const settings = {
     arrows: true,
   };
+
+  useEffect(() => {
+    console.log('Current branch:', branch);
+    console.log('Available photos:', Object.keys(photos));
+  }, [branch]);
+
+  if (!photos[branch]) {
+    return <div>해당 지점의 사진이 준비중입니다.</div>;
+  }
+
   return (
     <Wrapper id="menu4">
       {branch !== "/" && <Inner>

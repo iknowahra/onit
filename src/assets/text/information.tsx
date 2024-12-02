@@ -34,6 +34,7 @@ interface iBranchInfoDetail {
   service?: iServiceInfo; // 서비스 정보
   account?: iAccountInfo; // 계좌 정보
   business?: iBusinessInfo; // 사업자 정보
+  blog?: string; // 블로그 주소
 }
 
 type iBranchInfo = Record<string, iBranchInfoDetail>;
@@ -41,7 +42,7 @@ type iBranchInfo = Record<string, iBranchInfoDetail>;
 const information: iBranchInfo = {
   onedang: {
     path: "onedang",
-    alias: "인천원당점",
+    alias: "인천 원당점",
     name: "인천 원당 1호점",
     event: true,
     lat: 37.594593, //위도
@@ -69,11 +70,12 @@ const information: iBranchInfo = {
       owner: "강윤권", //사업대표자명
       businessNo: "560-81-03060", //사업자번호
       email: "onitspace@naver.com" //대표자이메일
-    }
+    },
+    blog: "https://blog.naver.com/gowonit"
   },
   pyeongtaek: {
     path: "pyeongtaek",
-    alias: "경기평택점",
+    alias: "경기 평택점",
     event: true,
     name: "경기 평택 2호점",
     lat: 37.594593, //위도
@@ -101,11 +103,12 @@ const information: iBranchInfo = {
       owner: "강윤권", //사업대표자명
       businessNo: "560-81-03060", //사업자번호
       email: "onitspace@naver.com" //대표자이메일
-    }
+    },
+    blog: "https://blog.naver.com/gowonit"
   },
   yeongdeungpo: {
     path: "yeongdeungpo",
-    alias: "영등포구청점",
+    alias: "서울 영등포구청점",
     name: "서울 영등포구청점 3호점",
     event: true,
     lat: 37.594593, //위도
@@ -133,11 +136,12 @@ const information: iBranchInfo = {
       owner: "김수인", //사업대표자명
       businessNo: "557-81-02901", //사업자번호
       email: "" //대표자이메일
-    }
+    },
+    blog: "https://www.instagram.com/onit_share_office/"
   },
   wonju: {
     path: "wonju",
-    alias: "강원원주점",
+    alias: "강원 원주점",
     event: false,
     name: "강원 원주 4호점",
     lat: 37.594593, //위도
@@ -165,7 +169,8 @@ const information: iBranchInfo = {
       owner: "강윤권", //사업대표자명
       businessNo: "560-81-03060", //사업자번호
       email: "onitspace@naver.com" //대표자이메일
-    }
+    },
+    blog: "https://blog.naver.com/gowonit"
   },
   daegu: {
     path: "daegu",
@@ -198,6 +203,39 @@ const information: iBranchInfo = {
       businessNo: "303-81-81707", //사업자번호
       email: "" //대표자이메일
     }
+  },
+  anyang: {
+    path: "anyang",
+    alias: "경기 안양역점",
+    event: true,
+    name: "경기 안양역 7호점",
+    lat: 37.39817512055, //위도
+    lng: 126.92341595438, //경도
+    address:
+      "경기 안양시 만안구 장내로143번길 15 연성빌딩 6층",
+    oldAddress: "경기 안양시 만인구 안양동 674-261 6층",
+    map: "https://naver.me/F741UYH3",
+    tel: "031-441-8282",
+    phone: "",
+    time: "00:00 - 24:00(연중무휴)",
+    service: {
+      park: false, // 일반주차여부
+      robotPark: true, //기계식주차여부
+      wifi: true,  //무선와이파이여부
+      genderSeparateToilet: true, //남녀화장실구분여부
+    },
+    account: {
+      owner: "주식회사 유이어",
+      bank: "국민은행",
+      accountNo: "08370104095235"
+    },
+    business: {
+      name: "주식회사 유이어",//상호명
+      owner: "김영주", //사업대표자명
+      businessNo: "897-86-03123", //사업자번호
+      email: "" //대표자이메일
+    },
+    blog: "https://blog.naver.com/onit_anyang"
   }
 }
 
