@@ -1,12 +1,5 @@
 import information from "./information";
 
-interface iSlogan {
-  sub: string;
-  main: string;
-  mainType: string[];
-  details: string;
-}
-
 interface iRouter {
   label: string;
   path: string;
@@ -23,31 +16,13 @@ interface iIntroDetail {
   scroll: string;
 }
 
-interface iFooter {
-  naver: string;
-  policy1: string;
-  policy2: string;
-  copyright: string;
-}
 
 interface iLanding {
-  slogan: iSlogan;
   intro: iIntro;
-  footer: iFooter;
 }
 
+
 const Landing: iLanding = {
-  slogan: {
-    sub: "모든 대표님들의 멋진 앞날을 응원하는 ON!T",
-    main: "공유오피스 & 스터디카페",
-    mainType: [
-      "편리한 공유오피스",
-      "가성비 상주|비상주오피스",
-      "편안한 환경의 스터디카페",
-    ],
-    details:
-      "온잇 공유오피스는 다년간의 투자 경험과 노하우를 지닌 세무 실무사가 함께 합니다.\n법인 설립, 사업자등록, 임대차 계약, 실사 대응, 우편물 관리 등 모든 방면에서 서포트가 가능합니다.",
-  },
   intro: {
     "/": {
       label: "지점을 선택하세요",
@@ -103,9 +78,18 @@ const Landing: iLanding = {
       tel: "0507-1478-5053",
       scroll: "오픈 특가 이벤트 진행 중!✨✨"
     },
+    "bugae": {
+      path: "bugae",
+      label: "인천 부개 6호점",
+      title: "인천 부개점",
+      detail: `인천부개점은 타 공유오피스에 비해 가장 합리적인 금액으로 비상주 사무실을 제공합니다.
+스터디카페도 최저가 수준으로 운영중이며, 개인석 이용시 오픈석을 무료로 제공합니다.`,
+      tel: "032-278-0909",
+      scroll: "가장 합리적인 가격으로 제공합니다✨✨"
+    },
     "anyang": {
       path: "anyang",
-      label: "경기 안양역 7호점",
+      label: "경기 안양역 8호점",
       title: "경기 안양역점",
       detail: `안양역 도보 5분 거리의 안양 1번가 내에 위치하였습니다.
 전좌석 고급 시디즈 의자로 구성되어 편안하고 넓은 사무실을 합리적인 가격으로 이용할 수 있습니다.
@@ -113,12 +97,6 @@ const Landing: iLanding = {
       tel: "031-441-8282",
       scroll: "오픈 특가 0원 이벤트 진행 중!✨✨"
     },
-  },
-  footer: {
-    naver: "https://naver.me/GXAEbpo8",
-    policy1: "개인정보취급방침 | ",
-    policy2: "이용약관",
-    copyright: "온잇 공유오피스 All right reserved.",
   },
 };
 

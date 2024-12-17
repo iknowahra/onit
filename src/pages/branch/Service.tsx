@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useBranch } from "../../contexts/BranchContext";
 
-import serviceInfo from "../../assets/text/service";
+import serviceInfo, { basicService } from "../../assets/text/service";
 import information from "../../assets/text/information";
 
 import photo11 from "../../assets/1/officeMain03.webp";
@@ -25,9 +25,9 @@ import photo51 from '../../assets/5/chilgok-op1.webp';
 import photo52 from '../../assets/5/chilgok-op2.webp';
 import photo53 from '../../assets/5/chilgok-op3.webp';
 
-import photo71 from '../../assets/vision1.webp';
-import photo72 from '../../assets/vision2.webp';
-import photo73 from '../../assets/vision3.webp';
+import photo81 from '../../assets/vision1.webp';
+import photo82 from '../../assets/vision2.webp';
+import photo83 from '../../assets/vision3.webp';
 
 
 
@@ -168,7 +168,8 @@ function Service() {
     "yeongdeungpo": [photo31, photo32, photo33],
     "wonju": [photo41, photo42, photo43],
     "daegu": [photo51, photo52, photo53],
-    "anyang": [photo71, photo72, photo73]
+    "bugae": [photo81, photo82, photo83],
+    "anyang": [photo81, photo82, photo83]
   };
 
   useEffect(() => {
@@ -183,10 +184,16 @@ function Service() {
         <p>대면 | 비대면 계약 모두 가능하며 연중무휴 상담이 가능합니다</p>
       </Title>
       <Inner>
-        {serviceInfo[branch as keyof typeof serviceInfo]?.map(({ main, sub }, index) => (
+        {serviceInfo[branch as keyof typeof serviceInfo] && serviceInfo[branch as keyof typeof serviceInfo]?.map(({ main, sub }, index) => (
           <Contents key={index} index={index}>
             <Header main={main} sub={sub} />
             <img src={photos[branch][index]} alt={main} />
+          </Contents>
+        ))}
+        {!serviceInfo?.[branch as keyof typeof serviceInfo] && basicService[0].map((service: { main: string; sub: string }, index) => (
+          <Contents key={index} index={index}>
+            <Header main={service.main} sub={service.sub} />
+            <img src={photos[branch][index]} alt={service.main} />
           </Contents>
         ))}
       </Inner>

@@ -57,7 +57,13 @@ import officePhoto422 from "../../assets/4/common02.webp";
 import officePhoto432 from "../../assets/4/common03.webp";
 import officePhoto442 from "../../assets/4/common04.webp";
 
-import officePhoto71 from "../../assets/7/anyang_main01.webp";
+// bugae
+import officePhoto61 from "../../assets/6/bugae1.webp";
+import officePhoto62 from "../../assets/6/bugae2.webp";
+import officePhoto63 from "../../assets/6/bugae3.webp";
+import officePhoto64 from "../../assets/6/bugae4.webp";
+
+import officePhoto81 from "../../assets/8/anyang_main01.webp";
 
 import { useBranch } from "../../contexts/BranchContext";
 import Subject from "../../components/Subject";
@@ -219,10 +225,16 @@ function PhotoZone() {
       officePhoto422,
       officePhoto432,
       officePhoto442,
-    ], "daegu": [
-
-    ], "anyang": [
-      officePhoto71,
+    ],
+    "daegu": [],
+    "bugae": [
+      officePhoto61,
+      officePhoto62,
+      officePhoto63,
+      officePhoto64,
+    ],
+    "anyang": [
+      officePhoto81,
     ]
   };
   const handleModal = (open: boolean) => {
@@ -232,11 +244,6 @@ function PhotoZone() {
   const settings = {
     arrows: true,
   };
-
-  useEffect(() => {
-    console.log('Current branch:', branch);
-    console.log('Available photos:', Object.keys(photos));
-  }, [branch]);
 
   if (!photos[branch]) {
     return <div>해당 지점의 사진이 준비중입니다.</div>;

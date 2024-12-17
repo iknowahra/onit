@@ -98,6 +98,7 @@ function PhotoCard(content: iCard, branch: string, index: number) {
     "yeongdeungpo": [photo1, photo2, photo4],
     "wonju": [photo1, photo2, photo3],
     "daegu": [photo1, photo2, photo3],
+    "bugae": [photo1, photo2, photo3],
     "anyang": [photo1, photo4, photo3]
   };
 

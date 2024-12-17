@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 import Subject from "../../components/Subject";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 
-import { useBranch } from "../../contexts/BranchContext";
 import info, { iBranchInfoDetail } from "../../assets/text/information";
 import Information from '../../components/Information'
 

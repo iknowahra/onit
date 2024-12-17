@@ -9,7 +9,8 @@ import photoPyeongtaek from '../assets/2/map.webp';
 import photoYeongdeungpo from '../assets/3/map.webp';
 import photoWonju from '../assets/4/map.webp';
 import photoDaegu from '../assets/5/map.webp';
-import photoAnyang from '../assets/7/anyang_map.webp';
+import photoBugae from '../assets/6/bugae_map.webp';
+import photoAnyang from '../assets/8/anyang_map.webp';
 import { useBranch } from '../contexts/BranchContext';
 
 const ImgWrapper = styled.div`
@@ -234,6 +235,7 @@ function Information({ info }: Props) {
     yeongdeungpo: photoYeongdeungpo,
     wonju: photoWonju,
     daegu: photoDaegu,
+    bugae: photoBugae,
     anyang: photoAnyang
   };
   const [branch, _] = useBranch();

@@ -7,7 +7,8 @@ import eventPyeongtaek from "../assets/2/event.webp";
 import eventYeongdeungpo from "../assets/3/event.webp";
 import eventWonju from "../assets/4/logo.webp";
 import eventDaegu from "../assets/5/chilgok_event.webp";
-import eventAnyang from "../assets/7/anyang_event.webp";
+import eventBugae from "../assets/6/bugae_event.webp";
+import eventAnyang from "../assets/8/anyang_event.webp";
 import styled from "styled-components";
 
 interface Props {
@@ -47,6 +48,7 @@ function EventModal({ title, isOpen, handleModal }: Props) {
     yeongdeungpo: eventYeongdeungpo,
     wonju: eventWonju,
     daegu: eventDaegu,
+    bugae: eventBugae,
     anyang: eventAnyang
   };
   const closeModal = (open: boolean, close24: boolean) => {

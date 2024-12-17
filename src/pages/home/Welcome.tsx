@@ -7,9 +7,6 @@ import photo2 from '../../assets/slide-welcome-02.webp';
 import photo3 from '../../assets/slide-welcome-03.webp';
 import office from '../../assets/valueup.webp';
 
-import Eng from '../../assets/text/landing';
-import Fit from '../../assets/text/benefit';
-
 const SliderWrapper = styled.div`
   height: calc(100vh - 20vh) !important;
   overflow-y: hidden !important;
@@ -168,18 +165,21 @@ function Welcome() {
         <MobileImg>
           <img src={office} alt="onit" />
         </MobileImg>
-        <p>{Eng.slogan.sub}</p>
-        <MainSlogan>{Eng.slogan.main}</MainSlogan>
+        <p>모든 대표님들의 멋진 앞날을 응원하는 ON!T</p>
+        <MainSlogan>공유오피스 & 스터디카페</MainSlogan>
         <Slider speed={500} {...settings}>
-          {Eng.slogan.mainType.map((type, index) => (
+          {['편리한 공유오피스', '가성비 상주|비상주오피스', '편안한 환경의 스터디카페'].map((type, index) => (
             <TypeSlogan key={index}>{type}</TypeSlogan>
           ))}
         </Slider>
-        <Details>{Eng.slogan.details}</Details>
+        <Details>
+          온잇 공유오피스는 다년간의 투자 경험과 노하우를 지닌 세무 실무사가 함께 합니다.<br />
+          법인 설립, 사업자등록, 임대차 계약, 실사 대응, 우편물 관리 등 모든 방면에서 서포트가 가능합니다.
+        </Details>
         <BranchDrop />
       </Intro>
       <WhyBanner onClick={() => handleScroll('home1')}>
-        {Fit.why.title}
+        ✨비상주 사무실은 이런 분들에게 필요합니다✨
         <i className="fa fa-angle-double-down" aria-hidden="true"></i>
         <i className="fa fa-angle-double-down" aria-hidden="true"></i>
       </WhyBanner>

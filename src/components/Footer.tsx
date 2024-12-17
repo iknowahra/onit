@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import OnitLogo from '../assets/logo.webp';
-import landingInfo from '../assets/text/landing';
 
 import { useBranch } from '../contexts/BranchContext';
 import information from '../assets/text/information';
@@ -183,6 +182,12 @@ const BranchLabel = styled.a`
 
 function Footer() {
   const [_, setBranch] = useBranch();
+  const choose = {
+    "/": {
+      label: "지점을 선택하세요",
+      path: "",
+    },
+  }
 
   const branches = Object.keys(information);
   return (
@@ -195,10 +200,10 @@ function Footer() {
           <Copyright>
             <PolicySns>
               <Policy>
-                <span>{landingInfo.footer.copyright}</span>
+                <span>온잇 공유오피스 All right reserved.</span>
               </Policy>
               <StyledNaverLogo>
-                <NaverLogo url={landingInfo.footer.naver} />
+                <NaverLogo url="https://naver.me/GXAEbpo8" />
               </StyledNaverLogo>
             </PolicySns>
             <Address>

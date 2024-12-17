@@ -171,7 +171,7 @@ function Header() {
         <img src={logo} alt="ON!T Logo" onClick={() => handleScroll(0)} />
         <Drop>
           <DropToggle variant="secondary" id="dropdown-basic">
-            {landingInfo.intro[branch].label}
+            지점을 선택하세요.
           </DropToggle>
           <DropMenu>
             {Object.entries(landingInfo.intro).map(([value, { label }]) => (

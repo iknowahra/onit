@@ -7,7 +7,9 @@ import office_pyeongtaek from "../../assets/2/pt_main01.webp";
 import office_yeongdeungpo from "../../assets/3/officeMain01.webp";
 import office_wonju from "../../assets/4/wj_main01.webp";
 import office_daegu from "../../assets/5/officeLanding.webp";
-import office_anyang from "../../assets/7/anyang_main.webp";
+import office_bugae1 from "../../assets/6/bugae3.webp";
+import office_bugae2 from "../../assets/6/bugae4.webp";
+import office_anyang from "../../assets/8/anyang_main.webp";
 
 import { useBranch } from "../../contexts/BranchContext";
 import info, { iIntroDetail } from "../../assets/text/landing";
@@ -149,6 +151,21 @@ const ScrollDown = styled.a`
   }
 `;
 
+const BugaeImage = styled.img`
+  width: 50%;
+  height: 100%;
+  
+  &:nth-child(2) {
+    @media (max-width: 780px) {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 780px) {
+    width: 100%;
+  }
+`;
+
 function Landing() {
   const [branch, _] = useBranch();
   const [currBranch, setBranch] = useState<iIntroDetail>();
@@ -158,13 +175,19 @@ function Landing() {
     yeongdeungpo: office_yeongdeungpo,
     wonju: office_wonju,
     daegu: office_daegu,
+    bugae1: office_bugae1,
+    bugae2: office_bugae2,
     anyang: office_anyang,
   };
 
   const getBranchImg = () => {
-    console.log('Current branch:', branch);
-    console.log('Image path:', branchImages[branch]);
-    return branchImages[branch] ? <img src={branchImages[branch]} alt="onit branch" /> : <></>
+    if (branch === 'bugae') {
+      return <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+        <BugaeImage src={branchImages['bugae1']} alt="onit branch bugae1" />
+        <BugaeImage src={branchImages['bugae2']} alt="onit branch bugae2" />
+      </div>
+    }
+    return branchImages[branch] ? <img src={branchImages[branch]} alt={`onit branch ${branch}`} /> : <></>
   };
 
   const handleScroll = (id: number) => {

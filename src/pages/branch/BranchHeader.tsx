@@ -159,7 +159,6 @@ function BranchHeader() {
   };
 
   useEffect(() => {
-    console.log("branch", branch);
     const effectFn = () => {
       window.scrollY === 0 ? setScroll(false) : setScroll(true);
     }

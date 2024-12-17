@@ -401,6 +401,40 @@ const priceInfo: iPrice = {
       },
     ]
   },
+  bugae: {
+    subject: '인천 부개점 이용가격 안내',
+    detail: "성공적인 비즈니스를 위한 비상주 사무실",
+    reservation: "",
+    tab: [
+      {
+        category: "office",
+        title: '비상주사무실 & 스터디카페',
+        price: [
+          {
+            title: '비상주 사무실 6개월',
+            detail: '개인 | 법인 동일',
+            price: "월 20,000원(VAT별도)"
+          },
+          {
+            title: '비상주 사무실 12개월',
+            detail: '개인 | 법인 동일',
+            price: "월 15,000원(VAT별도)"
+          },
+          {
+            badge: '추천⭐️',
+            title: '비상주 사무실 24개월',
+            detail: '개인 | 법인 동일',
+            price: "월 15,000원(VAT포함🔥)"
+          },
+          {
+            title: '스터디카페',
+            detail: '최저가 운영중',
+            price: "1시간 1,500원 ~"
+          },
+        ],
+      },
+    ]
+  },
   anyang: {
     subject: '경기 안양역점 이용가격 안내',
     detail: "성공적인 비즈니스를 위한 비상주 사무실",

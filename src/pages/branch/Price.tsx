@@ -30,10 +30,16 @@ import officePhoto51 from '../../assets/5/chilgok_price2.webp'; // 6개월
 import officePhoto52 from '../../assets/5/chilgok_price3.webp'; // 1년
 import officePhoto53 from '../../assets/5/chilgok_price4.webp'; // 2년
 
-import officePhoto71 from '../../assets/7/anyang_office.webp'; // 상주
-import officePhoto72 from '../../assets/7/anyang_laptop.webp'; // 비상주
-import officePhoto73 from '../../assets/7/anyang_meeting.webp'; // 회의실
-import officePhoto74 from '../../assets/7/anyang_printer.webp'; // 프린터
+// bugae
+import officePhoto61 from '../../assets/6/bugae1.webp'; // 6개월
+import officePhoto62 from '../../assets/6/bugae2.webp'; // 1년
+import officePhoto63 from '../../assets/6/bugae3.webp'; // 2년
+import officePhoto64 from '../../assets/6/bugae4.webp'; // 스터디카페
+
+import officePhoto81 from '../../assets/8/anyang_office.webp'; // 상주
+import officePhoto82 from '../../assets/8/anyang_laptop.webp'; // 비상주
+import officePhoto83 from '../../assets/8/anyang_meeting.webp'; // 회의실
+import officePhoto84 from '../../assets/8/anyang_printer.webp'; // 프린터
 
 
 
@@ -75,12 +81,14 @@ const Wrapper = styled.div`
   width: 100%;
   /* height: 120vh; */
   padding-bottom: 2rem;
+  min-height: 100vh;
   background-color: ${({ theme }) => theme.color.lightGrey};
 
   @media (max-width: 780px) {
     padding: 0rem;
     width: 100%;
     height: auto;
+    min-height: none;
   }
 `;
 
@@ -242,7 +250,8 @@ function Price() {
     "yeongdeungpo": [officePhoto31, officePhoto32, officePhoto33, officePhoto34],
     "wonju": [officePhoto41, officePhoto42, officePhoto43],
     "daegu": [officePhoto51, officePhoto52, officePhoto53],
-    "anyang": [officePhoto71, officePhoto72, officePhoto73, officePhoto74]
+    "bugae": [officePhoto61, officePhoto62, officePhoto63, officePhoto64],
+    "anyang": [officePhoto81, officePhoto82, officePhoto83, officePhoto84]
   };
   const studyPhotos: { [key: string]: string[] } = {
     "onedang": [studyPhoto11, studyPhoto12, studyPhoto13],

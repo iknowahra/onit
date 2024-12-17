@@ -204,11 +204,43 @@ const information: iBranchInfo = {
       email: "" //대표자이메일
     }
   },
+  bugae: {
+    path: "bugae",
+    alias: "인천 부개점",
+    event: true,
+    name: "인천 부개 6호점",
+    lat: 37.5047913, //위도
+    lng: 126.7370765, //경도
+    address:
+      "인천 부평구 충선로 176-10 민우빌딩 4층,5층",
+    oldAddress: "인천 부평구 부개동 12-152 민우빌딩 4층,5층",
+    map: "https://naver.me/F9NS9ars",
+    tel: "032-278-0909",
+    phone: "",
+    time: "06:00 - 02:00(연중무휴)",
+    service: {
+      park: true, // 일반주차여부
+      robotPark: false, //기계식주차여부
+      wifi: true,  //무선와이파이여부
+      genderSeparateToilet: true, //남녀화장실구분여부
+    },
+    account: {
+      owner: "주식회사 솔온컴퍼니",
+      bank: "국민은행",
+      accountNo: "086601-04-167803"
+    },
+    business: {
+      name: "주식회사 솔온컴퍼니",//상호명
+      owner: "이규범", //사업대표자명
+      businessNo: "403-86-03457", //사업자번호
+      email: "" //대표자이메일
+    },
+  },
   anyang: {
     path: "anyang",
     alias: "경기 안양역점",
     event: true,
-    name: "경기 안양역 7호점",
+    name: "경기 안양역 8호점",
     lat: 37.39817512055, //위도
     lng: 126.92341595438, //경도
     address:
